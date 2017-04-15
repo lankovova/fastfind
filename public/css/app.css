@@ -60,7 +60,7 @@ body {
   justify-content: space-between;
   padding: 0 40px;
   background: #6a1b9a;
-  box-shadow: 0px -2px 5px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -2px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
 #header .logo {
@@ -115,6 +115,7 @@ body {
 
 .card-container {
   width: 33.3333333333%;
+  position: relative;
 }
 
 .card-container .card {
@@ -148,6 +149,16 @@ body {
 .card-container .card .card-content .card-title {
   font-size: 20px;
   padding: 5px 0;
+}
+
+.card-container .card .card-content .card-title a {
+  color: black;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.card-container .card .card-content .card-title a:hover {
+  color: #e5a000;
 }
 
 .card-container .card .card-content .card-top-plate {

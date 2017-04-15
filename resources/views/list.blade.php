@@ -16,10 +16,14 @@
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
-						<img src="images/bar.jpg" alt="">
+						<a href="#">
+							<img src="images/bar.jpg" alt="">
+						</a>
 					</div>
 					<div class="card-content">
-						<div class="card-title">Porter</div>
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
 						<div class="card-top-plate flexbox">
 							<div class="rating">rating</div>
 							<div class="price">price</div>
@@ -34,10 +38,14 @@
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
-						<img src="images/bar.jpg" alt="">
+						<a href="#">
+							<img src="images/bar.jpg" alt="">
+						</a>
 					</div>
 					<div class="card-content">
-						<div class="card-title">Porter</div>
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
 						<div class="card-top-plate flexbox">
 							<div class="rating">rating</div>
 							<div class="price">price</div>
@@ -52,10 +60,14 @@
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
-						<img src="images/bar.jpg" alt="">
+						<a href="#">
+							<img src="images/pizza.jpg" alt="">
+						</a>
 					</div>
 					<div class="card-content">
-						<div class="card-title">Porter</div>
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
 						<div class="card-top-plate flexbox">
 							<div class="rating">rating</div>
 							<div class="price">price</div>
@@ -70,10 +82,14 @@
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
-						<img src="images/bar.jpg" alt="">
+						<a href="#">
+							<img src="images/restaurant.jpg" alt="">
+						</a>
 					</div>
 					<div class="card-content">
-						<div class="card-title">Porter</div>
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
 						<div class="card-top-plate flexbox">
 							<div class="rating">rating</div>
 							<div class="price">price</div>
@@ -88,10 +104,14 @@
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
-						<img src="images/bar.jpg" alt="">
+						<a href="#">
+							<img src="images/sushi.jpg" alt="">
+						</a>
 					</div>
 					<div class="card-content">
-						<div class="card-title">Porter</div>
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
 						<div class="card-top-plate flexbox">
 							<div class="rating">rating</div>
 							<div class="price">price</div>
@@ -102,6 +122,32 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="card-container">
+				<div class="card">
+					<div class="card-img">
+						<a href="#">
+							<img src="images/bar.jpg" alt="">
+						</a>
+					</div>
+					<div class="card-content">
+						<div class="card-title">
+							<a href="#">Porter</a>
+						</div>
+						<div class="card-top-plate flexbox">
+							<div class="rating">rating</div>
+							<div class="price">price</div>
+						</div>
+						<div class="card-description">
+							long description
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
 
 
 		</div>
