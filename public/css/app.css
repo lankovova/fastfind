@@ -1,0 +1,206 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+nav ul {
+  list-style: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: flex;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: #6a1b9a;
+  box-shadow: 0px -2px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+#header .logo {
+  line-height: 56px;
+  height: 56px;
+  color: white;
+  font-size: 26px;
+}
+
+#header .links .link {
+  line-height: 56px;
+  height: 56px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#header .links .link:hover {
+  background: #55167c;
+}
+
+#main {
+  width: 100%;
+}
+
+#main .filters-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 33.3333333333%;
+  max-height: calc(100vh - 56px);
+}
+
+#main .filters-container .filters {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+#main .cards-map-container {
+  width: 66.6666666667%;
+}
+
+#main .cards-map-container .cards {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+}
+
+.card-container {
+  width: 33.3333333333%;
+}
+
+.card-container .card {
+  margin: 5px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.card-container .card:hover {
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.4);
+}
+
+.card-container .card .card-img {
+  line-height: 0;
+}
+
+.card-container .card .card-img img {
+  border-radius: 2px 2px 0 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card .card-content {
+  padding: 10px;
+}
+
+.card-container .card .card-content .card-title {
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.card-container .card .card-content .card-top-plate {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.card-container .card .card-content .card-description {
+  padding-top: 5px;
+}
+
+.scrollable-full-screen {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .scrollable-full-screen {
+    height: calc(100vh - 56px);
+  }
+}
+
+.cool-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.cool-scroll::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}
+
+.cool-scroll::-webkit-scrollbar-thumb {
+  background-color: #6d6d6d;
+}
+
+#list-of-places .card {
+  height: 330px !important;
+  overflow: hidden;
+}
+
+#list-of-places .card .card-content {
+  padding: 10px 15px !important;
+}
+
+#order-by-panel {
+  padding: 10px 0;
+}
+
+#order-by-panel .order-by-text {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#order-by-panel a {
+  margin-bottom: 3px;
+}

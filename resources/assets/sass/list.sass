@@ -1,0 +1,32 @@
+// Variables
+@import "variables";
+
+.scrollable-full-screen
+	height: calc(100vh - #{$header-height})
+	overflow-y: auto
+	@media screen and (max-width: 600px)
+		height: calc(100vh - #{$header-height-mob})
+
+.cool-scroll
+	&::-webkit-scrollbar
+		width: 7px
+		height: 7px
+	&::-webkit-scrollbar-track
+		background-color: lighten(lightgray, 5%)
+	&::-webkit-scrollbar-thumb
+		background-color: darken(lightgray, 40%)
+
+#list-of-places
+	.card
+		height: 330px !important
+		overflow: hidden
+		.card-content
+			padding: 10px 15px !important
+
+#order-by-panel
+	padding: 10px 0
+	.order-by-text
+		margin-right: 10px
+		font-size: 16px
+	a
+		margin-bottom: 3px
