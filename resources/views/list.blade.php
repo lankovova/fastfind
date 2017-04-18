@@ -6,9 +6,8 @@
 
 <div id="main" class="flexbox">
 	<div class="filters-container">
-		<div class="toggle-filters-plate">
-			<i class="fa fa-chevron-down" aria-hidden="true"></i>
-			Open filters
+		<div class="toggle-filters-btn">
+			<i class="fa fa-chevron-down" aria-hidden="true"></i> Open filters
 		</div>
 		<div class="filters">
 			<div class="filters-content">
@@ -152,12 +151,13 @@
 			</div>
 
 
-
-
-
-
 		</div>
 	</div>
 </div>
 
+@stop
+
+
+@section('scripts')
+	<script type="text/javascript" src="js/app.js"></script>
 @stop

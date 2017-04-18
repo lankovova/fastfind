@@ -11,10 +11,18 @@ body
 	// font-family: 'Open Sans', sans-serif
 
 #header
+	z-index: 20
 	justify-content: space-between
 	padding: 0 40px
 	background: $primary-color
 	box-shadow: 0px -2px 3px 4px rgba(0,0,0,0.5);
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	box-sizing: border-box
+	@media screen and (max-width: 600px)
+		padding: 0 20px
 	.logo
 		line-height: $header-height
 		height: $header-height
@@ -37,35 +45,41 @@ body
 
 
 #main
+	margin-top: $header-height
 	width: 100%
 	.filters-container
+		z-index: 21
 		overflow-y: auto
-		overflow-x: hidden
 		min-width: 300px
 		width: percentage(1/4)
 		max-height: calc(100vh - #{$header-height})
-		transition: max-height 300ms ease-in-out
 		@media screen and (max-width: 800px)
 			width: 100%
-			min-width: 0
-			overflow-y: hidden
-		.toggle-filters-plate
+		.toggle-filters-btn
+			height: 40px
+			line-height: 20px
 			display: none
 			width: 100%
 			padding: 10px 0
+			box-sizing: border-box
 			text-align: center
+			background: $accent-color
+			color: $text--primary-color
 			@media screen and (max-width: 800px)
 				display: block
 		.filters
 			font-size: 16px
 			line-height: 20px
 			text-align: justify
+			overflow: hidden
 			@media screen and (max-width: 800px)
-				height: 0px
+				display: none
 			.filters-content
 				padding: 10px
 	.cards-map-container
 		width: percentage(3/4)
+		max-height: calc(100vh - #{$header-height})
+		overflow-y: auto
 		@media screen and (max-width: 800px)
 			width: 100%
 		.cards

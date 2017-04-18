@@ -56,23 +56,35 @@ body {
 }
 
 #header {
+  z-index: 20;
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 0 40px;
   background: #6a1b9a;
   box-shadow: 0px -2px 3px 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  #header {
+    padding: 0 20px;
+  }
 }
 
 #header .logo {
-  line-height: 56px;
-  height: 56px;
+  line-height: 50px;
+  height: 50px;
   color: white;
   font-size: 26px;
 }
 
 #header .links .link {
-  line-height: 56px;
-  height: 56px;
+  line-height: 50px;
+  height: 50px;
   padding: 0 20px;
   text-transform: uppercase;
   font-size: 16px;
@@ -86,36 +98,38 @@ body {
 }
 
 #main {
+  margin-top: 50px;
   width: 100%;
 }
 
 #main .filters-container {
+  z-index: 21;
   overflow-y: auto;
-  overflow-x: hidden;
   min-width: 300px;
   width: 25%;
-  max-height: calc(100vh - 56px);
-  -webkit-transition: max-height 300ms ease-in-out;
-  transition: max-height 300ms ease-in-out;
+  max-height: calc(100vh - 50px);
 }
 
 @media screen and (max-width: 800px) {
   #main .filters-container {
     width: 100%;
-    min-width: 0;
-    overflow-y: hidden;
   }
 }
 
-#main .filters-container .toggle-filters-plate {
+#main .filters-container .toggle-filters-btn {
+  height: 40px;
+  line-height: 20px;
   display: none;
   width: 100%;
   padding: 10px 0;
+  box-sizing: border-box;
   text-align: center;
+  background: #FFBA19;
+  color: #212121;
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-container .toggle-filters-plate {
+  #main .filters-container .toggle-filters-btn {
     display: block;
   }
 }
@@ -124,11 +138,12 @@ body {
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
   #main .filters-container .filters {
-    height: 0px;
+    display: none;
   }
 }
 
@@ -138,6 +153,8 @@ body {
 
 #main .cards-map-container {
   width: 75%;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 800px) {
@@ -253,13 +270,13 @@ body {
 }
 
 .scrollable-full-screen {
-  height: calc(100vh - 56px);
+  height: calc(100vh - 50px);
   overflow-y: auto;
 }
 
 @media screen and (max-width: 600px) {
   .scrollable-full-screen {
-    height: calc(100vh - 56px);
+    height: calc(100vh - 50px);
   }
 }
 
