@@ -13,7 +13,11 @@
 <body>
 	<header>
 		<div id="header" class="flexbox">
-			<div class="logo">#FastFind</div>
+			<div class="logo flexbox">
+				<div class="image-container">
+					<img src="images/logo-row-2.png" alt="Logo">
+				</div>
+			</div>
 			<div class="links flexbox">
 				<a href="#" class="link">About</a>
 				<a href="#" class="link">Log In</a>

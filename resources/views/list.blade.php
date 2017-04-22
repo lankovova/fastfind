@@ -23,7 +23,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/design.jpeg" alt="">
+							<img src="images/places/design.jpeg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
@@ -45,7 +45,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/cool.jpg" alt="">
+							<img src="images/places/cool.jpg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
@@ -67,7 +67,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/pizza.jpg" alt="">
+							<img src="images/places/pizza.jpg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
@@ -89,7 +89,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/restaurant.jpg" alt="">
+							<img src="images/places/restaurant.jpg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
@@ -111,7 +111,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/sushi.jpg" alt="">
+							<img src="images/places/sushi.jpg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
@@ -133,7 +133,7 @@
 				<div class="card">
 					<div class="card-img">
 						<a href="#">
-							<img src="images/bar.jpg" alt="">
+							<img src="images/places/bar.jpg" alt="">
 						</a>
 					</div>
 					<div class="card-content">
