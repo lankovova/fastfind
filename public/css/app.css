@@ -139,11 +139,11 @@ body {
   color: white;
 }
 
-#main-home #footer .footer-links {
+#main-home #footer .socials-links {
   font-size: 0;
 }
 
-#main-home #footer .footer-links a {
+#main-home #footer .socials-links a {
   color: white;
   font-size: 16px;
 }
