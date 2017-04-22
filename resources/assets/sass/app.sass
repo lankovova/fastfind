@@ -47,14 +47,19 @@ body
 #main
 	margin-top: $header-height
 	width: 100%
-	.filters-container
-		z-index: 21
-		overflow-y: auto
+	.filters-block
 		min-width: 300px
 		width: percentage(1/4)
+		// Scroll props
+		overflow-y: auto
 		max-height: calc(100vh - #{$header-height})
 		@media screen and (max-width: 800px)
 			width: 100%
+			position: fixed
+			top: $header-height
+			left: 0
+			z-index: 21
+			box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.4)
 		.toggle-filters-btn
 			height: 40px
 			line-height: 20px
@@ -63,28 +68,41 @@ body
 			padding: 10px 0
 			box-sizing: border-box
 			text-align: center
-			background: $accent-color
-			color: $text--primary-color
+			color: black
+			background: white
 			@media screen and (max-width: 800px)
 				display: block
-		.filters
+		.filters-container
 			font-size: 16px
 			line-height: 20px
 			text-align: justify
-			overflow: hidden
+			background: white
+			@media screen and (min-width: 801px)
+				display: block !important
 			@media screen and (max-width: 800px)
 				display: none
+				min-height: calc(100vh - #{$header-height} - 40px)
 			.filters-content
 				padding: 10px
+				flex-flow: column
+				justify-content: center
+				align-items: center
+				#apply-btn
+					text-align: center
+					background: lighten(green, 15)
+					width: 70%
+					padding: 10px 0
 	.cards-map-container
 		width: percentage(3/4)
-		// Fix this with fiexd filters
 		max-height: calc(100vh - #{$header-height})
 		overflow-y: auto
 		@media screen and (max-width: 800px)
 			width: 100%
+			max-height: calc(100vh - #{$header-height} - 40px)
+			margin-top: 40px
 		.cards
 			flex-flow: row wrap
+			padding: 10px
 	@media screen and (max-width: 800px)
 		flex-flow: column
 
@@ -102,7 +120,6 @@ body
 		width: percentage(1/2)
 	@media screen and (max-width: 450px)
 		width: percentage(1/1)
-
 .card
 	margin: 5px
 	border-radius: 2px

@@ -102,21 +102,25 @@ body {
   width: 100%;
 }
 
-#main .filters-container {
-  z-index: 21;
-  overflow-y: auto;
+#main .filters-block {
   min-width: 300px;
   width: 25%;
+  overflow-y: auto;
   max-height: calc(100vh - 50px);
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-container {
+  #main .filters-block {
     width: 100%;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 21;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
   }
 }
 
-#main .filters-container .toggle-filters-btn {
+#main .filters-block .toggle-filters-btn {
   height: 40px;
   line-height: 20px;
   display: none;
@@ -124,31 +128,52 @@ body {
   padding: 10px 0;
   box-sizing: border-box;
   text-align: center;
-  background: #FFBA19;
-  color: #212121;
+  color: black;
+  background: white;
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-container .toggle-filters-btn {
+  #main .filters-block .toggle-filters-btn {
     display: block;
   }
 }
 
-#main .filters-container .filters {
+#main .filters-block .filters-container {
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
-  overflow: hidden;
+  background: white;
 }
 
-@media screen and (max-width: 800px) {
-  #main .filters-container .filters {
-    display: none;
+@media screen and (min-width: 801px) {
+  #main .filters-block .filters-container {
+    display: block !important;
   }
 }
 
-#main .filters-container .filters .filters-content {
+@media screen and (max-width: 800px) {
+  #main .filters-block .filters-container {
+    display: none;
+    min-height: calc(100vh - 50px - 40px);
+  }
+}
+
+#main .filters-block .filters-container .filters-content {
   padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+#main .filters-block .filters-container .filters-content #apply-btn {
+  text-align: center;
+  background: #00cd00;
+  width: 70%;
+  padding: 10px 0;
 }
 
 #main .cards-map-container {
@@ -160,6 +185,8 @@ body {
 @media screen and (max-width: 800px) {
   #main .cards-map-container {
     width: 100%;
+    max-height: calc(100vh - 50px - 40px);
+    margin-top: 40px;
   }
 }
 
@@ -167,6 +194,7 @@ body {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-flow: row wrap;
+  padding: 10px;
 }
 
 @media screen and (max-width: 800px) {
