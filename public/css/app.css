@@ -97,12 +97,17 @@ body {
   background: #55167c;
 }
 
-#main {
+#main-home {
+  width: 100%;
+  margin-top: 50px;
+}
+
+#main-list {
   margin-top: 50px;
   width: 100%;
 }
 
-#main .filters-block {
+#main-list .filters-block {
   min-width: 300px;
   width: 25%;
   overflow-y: auto;
@@ -110,7 +115,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-block {
+  #main-list .filters-block {
     width: 100%;
     position: fixed;
     top: 50px;
@@ -120,7 +125,7 @@ body {
   }
 }
 
-#main .filters-block .toggle-filters-btn {
+#main-list .filters-block .toggle-filters-btn {
   height: 40px;
   line-height: 20px;
   display: none;
@@ -133,12 +138,12 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-block .toggle-filters-btn {
+  #main-list .filters-block .toggle-filters-btn {
     display: block;
   }
 }
 
-#main .filters-block .filters-container {
+#main-list .filters-block .filters-container {
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
@@ -146,19 +151,19 @@ body {
 }
 
 @media screen and (min-width: 801px) {
-  #main .filters-block .filters-container {
+  #main-list .filters-block .filters-container {
     display: block !important;
   }
 }
 
 @media screen and (max-width: 800px) {
-  #main .filters-block .filters-container {
+  #main-list .filters-block .filters-container {
     display: none;
     min-height: calc(100vh - 50px - 40px);
   }
 }
 
-#main .filters-block .filters-container .filters-content {
+#main-list .filters-block .filters-container .filters-content {
   padding: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -169,28 +174,28 @@ body {
   align-items: center;
 }
 
-#main .filters-block .filters-container .filters-content #apply-btn {
+#main-list .filters-block .filters-container .filters-content #apply-btn {
   text-align: center;
   background: #00cd00;
   width: 70%;
   padding: 10px 0;
 }
 
-#main .cards-map-container {
+#main-list .cards-map-container {
   width: 75%;
   max-height: calc(100vh - 50px);
   overflow-y: auto;
 }
 
 @media screen and (max-width: 800px) {
-  #main .cards-map-container {
+  #main-list .cards-map-container {
     width: 100%;
     max-height: calc(100vh - 50px - 40px);
     margin-top: 40px;
   }
 }
 
-#main .cards-map-container .cards {
+#main-list .cards-map-container .cards {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-flow: row wrap;
@@ -198,7 +203,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  #main {
+  #main-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-flow: column;
@@ -295,50 +300,4 @@ body {
 
 .card .card-content .card-description {
   padding-top: 5px;
-}
-
-.scrollable-full-screen {
-  height: calc(100vh - 50px);
-  overflow-y: auto;
-}
-
-@media screen and (max-width: 600px) {
-  .scrollable-full-screen {
-    height: calc(100vh - 50px);
-  }
-}
-
-.cool-scroll::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-.cool-scroll::-webkit-scrollbar-track {
-  background-color: #e0e0e0;
-}
-
-.cool-scroll::-webkit-scrollbar-thumb {
-  background-color: #6d6d6d;
-}
-
-#list-of-places .card {
-  height: 330px !important;
-  overflow: hidden;
-}
-
-#list-of-places .card .card-content {
-  padding: 10px 15px !important;
-}
-
-#order-by-panel {
-  padding: 10px 0;
-}
-
-#order-by-panel .order-by-text {
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-#order-by-panel a {
-  margin-bottom: 3px;
 }
