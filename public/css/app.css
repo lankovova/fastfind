@@ -109,6 +109,7 @@ body {
 
 #main-home {
   width: 100%;
+  height: 100%;
   margin-top: 50px;
 }
 
@@ -135,17 +136,106 @@ body {
   left: 0;
   width: 100%;
   height: 40px;
-  background: black;
-  color: white;
-}
-
-#main-home #footer .socials-links {
-  font-size: 0;
-}
-
-#main-home #footer .socials-links a {
-  color: white;
+  line-height: 40px;
   font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#main-home #footer .autor-info .autor {
+  margin-left: 20px;
+}
+
+#main-home #footer .autor-info .social-links {
+  margin-left: 20px;
+}
+
+#main-home #footer .autor-info .social-links a {
+  color: white;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+#main-home #footer .autor-info .social-links a:hover {
+  color: #FFBA19;
+}
+
+#main-home .main-block {
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column;
+  min-height: calc(100vh - 50px);
+}
+
+#main-home .main-block .slogan-container {
+  padding: 20px;
+  text-align: center;
+}
+
+#main-home .main-block .slogan-container .slogan {
+  color: #ffb200;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black;
+}
+
+@media screen and (max-width: 380px) {
+  #main-home .main-block .slogan-container .slogan {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main-home .main-block .choose-type-container {
+    padding: 0 20px;
+  }
+}
+
+#main-home .main-block .choose-type-container .chose-type {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+}
+
+#main-home .main-block .choose-type-container .chose-type .type-container {
+  margin: 0 5px 5px;
+}
+
+@media screen and (max-width: 500px) {
+  #main-home .main-block .choose-type-container .chose-type .type-container {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #main-home .main-block .choose-type-container .chose-type .type-container {
+    width: 100%;
+  }
+}
+
+#main-home .main-block .choose-type-container .chose-type .type-container a {
+  color: white;
+}
+
+#main-home .main-block .choose-type-container .chose-type .type-container .type {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#main-home .main-block .choose-type-container .chose-type .type-container .type:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFBA19;
 }
 
 #main-list {
