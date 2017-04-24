@@ -4,7 +4,7 @@
 
 @section('main')
 
-<div id="main-list" class="flexbox">
+<div id="list-page" class="flexbox">
 	<div class="filters-block">
 		<div class="toggle-filters-btn"><i class="fa fa-chevron-down" aria-hidden="true"></i> Open filters</div>
 		<div class="filters-container">

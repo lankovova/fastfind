@@ -20,7 +20,7 @@
 			</div>
 			<div class="links flexbox">
 				<a href="#" class="link">About</a>
-				<a href="#" class="link">Log In</a>
+				<a href="/login" class="link">Log In</a>
 			</div>
 		</div>
 	</header>

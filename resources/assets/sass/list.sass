@@ -8,9 +8,9 @@
 // 		background-color: darken(lightgray, 40%)
 @import "variables"
 
-#main-list
-	margin-top: $header-height
-	width: 100%
+#list-page
+	@media screen and (max-width: 800px)
+		flex-flow: column
 	.filters-block
 		min-width: 300px
 		width: percentage(1/4)
@@ -67,8 +67,6 @@
 		.cards
 			flex-flow: row wrap
 			padding: 10px
-	@media screen and (max-width: 800px)
-		flex-flow: column
 
 .card-container
 	width: percentage(1/5)

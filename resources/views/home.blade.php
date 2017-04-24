@@ -2,7 +2,7 @@
 
 @section('main')
 
-	<div id="main-home">
+	<div id="home-page">
 
 		<div class="image-container">
 			<img src="images/awesome.jpg" alt="">
