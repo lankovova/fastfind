@@ -5,9 +5,17 @@
 
 .flexbox
 	display: flex
+	&.flex-column
+		flex-direction: column
+	&.flex-center
+		justify-content: center
+		align-items: center
 
 body
 	font-family: 'Roboto', sans-serif
+	min-height: 100vh
+	display: flex
+	justify-content: space-between
 	// font-family: 'Open Sans', sans-serif
 
 #header

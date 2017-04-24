@@ -51,8 +51,26 @@ input, select {
   display: flex;
 }
 
+.flexbox.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+.flexbox.flex-center {
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 }
 
 #header {
@@ -112,6 +130,53 @@ main {
   width: 100%;
 }
 
+#entrance-page {
+  position: relative;
+  height: 100%;
+}
+
+#entrance-page .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  z-index: -1;
+}
+
+#entrance-page .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#entrance-page .main-block {
+  height: 100%;
+  width: 100%;
+}
+
+#entrance-page .main-block .entrance-container {
+  padding: 20px;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 3px;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form .heading {
+  color: white;
+  text-transform: uppercase;
+}
+
+#home-page {
+  position: relative;
+  height: 100%;
+}
+
 #home-page .image-container {
   position: absolute;
   top: 0;
@@ -137,7 +202,7 @@ main {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-flow: column;
-  min-height: calc(100vh - 50px);
+  height: 100%;
 }
 
 #home-page .main-block .slogan-container {

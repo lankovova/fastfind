@@ -157,8 +157,3 @@
 </div>
 
 @stop
-
-
-@section('scripts')
-	<script type="text/javascript" src="js/app.js"></script>
-@stop
