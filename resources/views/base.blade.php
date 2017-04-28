@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@yield('title','FastFind')</title>
-	{{-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e7eb4655ae.js"></script>
 	<link type="text/css" rel="stylesheet" href="css/app.css"/>
@@ -15,7 +14,9 @@
 		<div id="header" class="flexbox">
 			<div class="logo flexbox">
 				<div class="image-container">
-					<img src="images/logo-row-2.png" alt="Logo">
+					<a href="/">
+						<img src="images/logo-row-2.png" alt="Logo">
+					</a>
 				</div>
 			</div>
 			<div class="links flexbox">
