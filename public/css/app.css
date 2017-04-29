@@ -157,6 +157,42 @@ main {
   width: 100%;
 }
 
+#entrance-page .main-block .flip-container {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+#entrance-page .main-block .flip-container .flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+#entrance-page .main-block .flip-container .flip {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+#entrance-page .main-block .flip-container .flip #login-side {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#entrance-page .main-block .flip-container .flip #signup-side {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
 #entrance-page .main-block .entrance-container {
   padding: 20px;
 }
@@ -170,14 +206,14 @@ main {
 }
 
 #entrance-page .main-block .entrance-container .entrance-form .heading {
-  color: white;
+  color: #FFBA19;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 900;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form .inputs-container {
-  margin: 30px 0 20px 0;
+  margin: 20px 0 20px 0;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form input {
@@ -222,6 +258,26 @@ main {
 
 #entrance-page .main-block .entrance-container .entrance-form form input[type="submit"]:hover {
   background: black;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form .change-entrance {
+  color: #bfbfbf;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form .change-entrance .flip-entrance-card {
+  border-bottom: 1px solid #999999;
+  cursor: pointer;
+  color: #cccccc;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form .change-entrance .flip-entrance-card:hover {
+  color: #FFBA19;
+  border-bottom: 1px solid #FFBA19;
 }
 
 #home-page {
