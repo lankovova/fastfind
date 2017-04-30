@@ -6,6 +6,14 @@ $(function(){
 
 });
 
+$(function(){
+
+	$(".mobile-menu .burger").click(function(){
+		$(".mobile-menu .dropdown").toggleClass("display-block");
+	});
+
+});
+
 $(document).ready(function(){
 
 	$('.toggle-filters-btn').click(function() {

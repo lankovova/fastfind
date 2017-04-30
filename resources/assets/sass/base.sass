@@ -16,10 +16,9 @@ body
 	min-height: 100vh
 	display: flex
 	justify-content: space-between
-	// font-family: 'Open Sans', sans-serif
 
 #header
-	z-index: 20
+	z-index: 22
 	justify-content: space-between
 	padding: 0 40px
 	background: $primary-color
@@ -31,6 +30,7 @@ body
 	box-sizing: border-box
 	@media screen and (max-width: 600px)
 		padding: 0 20px
+		box-shadow: none
 	.logo
 		line-height: $header-height
 		height: $header-height
@@ -45,7 +45,8 @@ body
 				width: 100%
 
 	.links
-		display: none
+		@media screen and (max-width: 400px)
+			display: none
 		.link
 			line-height: $header-height
 			height: $header-height
@@ -59,8 +60,35 @@ body
 			&:hover
 				background: darken($primary-color, 7%)
 
-	.burger
-		color: white
+	.mobile-menu
+		display: none
+		position: relative
+		width: 100%
+		justify-content: flex-end
+		@media screen and (max-width: 400px)
+			display: flex
+		.burger
+			color: white
+		.dropdown
+			display: none
+			position: absolute
+			top: 100%
+			right: 0
+			.mob-links
+				background: white
+				border-radius: 1px
+				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+				.mob-link
+					font-size: 18px
+					box-sizing: border-box
+					padding: 15px 30px
+					color: black
+					transition: all 200ms ease-in-out
+					&:hover
+						color: $accent-color
+
+.display-block
+	display: block !important
 
 main
 	margin-top: $header-height

@@ -224,7 +224,7 @@ body {
 }
 
 #header {
-  z-index: 20;
+  z-index: 22;
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 0 40px;
@@ -240,6 +240,7 @@ body {
 @media screen and (max-width: 600px) {
   #header {
     padding: 0 20px;
+    box-shadow: none;
   }
 }
 
@@ -263,8 +264,10 @@ body {
   width: 100%;
 }
 
-#header .links {
-  display: none;
+@media screen and (max-width: 400px) {
+  #header .links {
+    display: none;
+  }
 }
 
 #header .links .link {
@@ -282,8 +285,53 @@ body {
   background: #55167c;
 }
 
-#header .burger {
+#header .mobile-menu {
+  display: none;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 400px) {
+  #header .mobile-menu {
+    display: -webkit-box;
+    display: flex;
+  }
+}
+
+#header .mobile-menu .burger {
   color: white;
+}
+
+#header .mobile-menu .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+#header .mobile-menu .dropdown .mob-links {
+  background: white;
+  border-radius: 1px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#header .mobile-menu .dropdown .mob-links .mob-link {
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  color: black;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#header .mobile-menu .dropdown .mob-links .mob-link:hover {
+  color: #FFBA19;
+}
+
+.display-block {
+  display: block !important;
 }
 
 main {

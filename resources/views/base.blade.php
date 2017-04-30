@@ -23,8 +23,16 @@
 				<a href="#" class="link">About</a>
 				<a href="/auth" class="link">Log In</a>
 			</div>
-			<div class="burger flexbox flex-center">
-				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+			<div class="mobile-menu">
+				<div class="burger flexbox flex-center">
+					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+				</div>
+				<div class="dropdown">
+					<div class="mob-links flexbox flex-col">
+						<a href="#" class="mob-link">About</a>
+						<a href="/auth" class="mob-link">Log In</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
