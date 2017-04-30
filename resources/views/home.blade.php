@@ -17,22 +17,22 @@
 			<div class="choose-type-container">
 				<div class="chose-type flexbox">
 					<div class="type-container">
-						<a href="#">
+						<a href="/list">
 							<div class="type"><i class="fa fa-cutlery"></i> Food</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="#">
+						<a href="/list">
 							<div class="type"><i class="fa fa-coffee"></i> Drink</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="#">
+						<a href="/list">
 							<div class="type"><i class="fa fa-ticket"></i> Money Waste</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="#">
+						<a href="/list">
 							<div class="type"><i class="fa fa-university"></i> Culture</div>
 						</a>
 					</div>
@@ -47,7 +47,7 @@
 					Created by Lanko Vova &copy;
 				</div>
 				<div class="social-links">
-					<a href="#">
+					<a href="https://github.com/lankovova" target="_blank">
 						<i class="fa fa-github" aria-hidden="true"></i> GitHub
 					</a>
 				</div>

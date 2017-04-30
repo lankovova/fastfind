@@ -13,15 +13,15 @@
 	<header>
 		<div id="header" class="flexbox">
 			<div class="logo flexbox">
-				<div class="image-container">
-					<a href="/">
+				<a href="/">
+					<div class="image-container">
 						<img src="images/logo-row-2.png" alt="Logo">
-					</a>
-				</div>
+					</div>
+				</a>
 			</div>
 			<div class="links flexbox">
 				<a href="#" class="link">About</a>
-				<a href="/login" class="link">Log In</a>
+				<a href="/auth" class="link">Log In</a>
 			</div>
 		</div>
 	</header>
