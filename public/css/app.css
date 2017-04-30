@@ -263,6 +263,10 @@ body {
   width: 100%;
 }
 
+#header .links {
+  display: none;
+}
+
 #header .links .link {
   line-height: 50px;
   height: 50px;
@@ -276,6 +280,10 @@ body {
 
 #header .links .link:hover {
   background: #55167c;
+}
+
+#header .burger {
+  color: white;
 }
 
 main {
@@ -388,25 +396,34 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
   font-size: 16px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
 }
 
+#footer .autor-info {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-left: 10px;
+}
+
 #footer .autor-info .autor {
-  margin-left: 20px;
+  padding: 10px 0;
+  padding-right: 10px;
 }
 
 #footer .autor-info .social-links {
-  margin-left: 20px;
+  padding: 10px 0;
 }
 
 #footer .autor-info .social-links a {
   color: white;
   -webkit-transition: all 200ms;
   transition: all 200ms;
+  padding: 0 5px 0 0;
 }
 
 #footer .autor-info .social-links a:hover {

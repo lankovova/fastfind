@@ -61,18 +61,21 @@
 	bottom: 0
 	left: 0
 	width: 100%
-	height: 40px
-	line-height: 40px
 	font-size: 16px
 	background: rgba(black, 0.6)
 	color: white
 	.autor-info
+		flex-flow: row wrap
+		align-items: center
+		padding-left: 10px
 		.autor
-			margin-left: 20px
+			padding: 10px 0
+			padding-right: 10px
 		.social-links
-			margin-left: 20px
+			padding: 10px 0
 			a
 				color: white
 				transition: all 200ms
+				padding: 0 5px 0 0
 				&:hover
 					color: $accent-color

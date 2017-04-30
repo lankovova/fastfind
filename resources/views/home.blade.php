@@ -48,7 +48,10 @@
 				</div>
 				<div class="social-links">
 					<a href="https://github.com/lankovova" target="_blank">
-						<i class="fa fa-github" aria-hidden="true"></i> GitHub
+						<i class="fa fa-github fa-lg" aria-hidden="true"></i>
+					</a>
+					<a href="https://vk.com/boomshakalakas" target="_blank">
+						<i class="fa fa-vk fa-lg" aria-hidden="true"></i>
 					</a>
 				</div>
 			</div>

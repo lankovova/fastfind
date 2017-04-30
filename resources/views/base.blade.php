@@ -23,6 +23,9 @@
 				<a href="#" class="link">About</a>
 				<a href="/auth" class="link">Log In</a>
 			</div>
+			<div class="burger flexbox flex-center">
+				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+			</div>
 		</div>
 	</header>
 
