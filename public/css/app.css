@@ -99,21 +99,39 @@
 
 #entrance-page .main-block .entrance-container .entrance-form form input::-webkit-input-placeholder {
   color: #cccccc;
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form input:-ms-input-placeholder {
   color: #cccccc;
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form input::placeholder {
   color: #cccccc;
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form input[type="text"]:focus, #entrance-page .main-block .entrance-container .entrance-form form input[type="password"]:focus {
   padding: 10px 20px;
   color: black;
   outline: none;
-  background: white;
+  background: #e6e6e6;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form form input[type="text"]:focus::-webkit-input-placeholder, #entrance-page .main-block .entrance-container .entrance-form form input[type="password"]:focus::-webkit-input-placeholder {
+  color: black;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form form input[type="text"]:focus:-ms-input-placeholder, #entrance-page .main-block .entrance-container .entrance-form form input[type="password"]:focus:-ms-input-placeholder {
+  color: black;
+}
+
+#entrance-page .main-block .entrance-container .entrance-form form input[type="text"]:focus::placeholder, #entrance-page .main-block .entrance-container .entrance-form form input[type="password"]:focus::placeholder {
+  color: black;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form form input[type="submit"] {

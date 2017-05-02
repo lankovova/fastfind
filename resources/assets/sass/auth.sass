@@ -64,12 +64,15 @@
 						font-size: 16px
 						&::placeholder
 							color: darken(white, 20)
+							transition: color 300ms ease
 					input[type="text"], input[type="password"]
 						&:focus
 							padding: 10px 20px
 							color: black
 							outline: none
-							background: white
+							background: darken(white, 10)
+							&::placeholder
+								color: black
 					input[type="submit"]
 						text-transform: uppercase
 						background: rgba(black, 0.5)
