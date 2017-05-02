@@ -136,9 +136,9 @@
 }
 
 #entrance-page .main-block .entrance-container .entrance-form .change-entrance .flip-entrance-card {
-  border-bottom: 1px solid #999999;
   cursor: pointer;
-  color: #cccccc;
+  color: white;
+  border-bottom: 1px solid transparent;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
