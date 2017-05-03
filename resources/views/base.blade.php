@@ -7,7 +7,7 @@
 	<title>@yield('title','FastFind')</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e7eb4655ae.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/app.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/app.css"/>
 </head>
 <body>
 	<header>
@@ -15,7 +15,7 @@
 			<div class="logo flexbox">
 				<a href="/">
 					<div class="image-container">
-						<img src="images/logo-row-2.png" alt="Logo">
+						<img src="../images/logo-row-2.png" alt="Logo">
 					</div>
 				</a>
 			</div>
@@ -41,8 +41,8 @@
 		@yield('main')
 	</main>
 
-	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
 
 </body>
 </html>
