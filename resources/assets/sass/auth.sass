@@ -21,29 +21,33 @@
 		width: 100%
 		.flip-container
 			perspective: 800px
+			max-width: 400px
+			width: 400px
 			.flipped
 				transform: rotateY(180deg)
 			.flip
+				background: red
 				position: relative
 				transform-style: preserve-3d
 				transition: transform 500ms ease-in-out
 				#login-side
+					width: 100%
 					position: absolute
 					box-sizing: border-box
 					backface-visibility: hidden
 				#signup-side
+					width: 100%
 					position: absolute
 					box-sizing: border-box
 					backface-visibility: hidden
 					transform: rotateY(180deg)
 		.entrance-container
 			padding: 20px
+			box-sizing: border-box
 			.entrance-form
 				background: rgba(black, 0.7)
 				padding: 50px
 				border-radius: 2px
-				box-sizing: border-box
-				width: 350px
 				.heading
 					color: $accent-color
 					text-transform: uppercase

@@ -28,6 +28,8 @@
 #entrance-page .main-block .flip-container {
   -webkit-perspective: 800px;
   perspective: 800px;
+  max-width: 400px;
+  width: 400px;
 }
 
 #entrance-page .main-block .flip-container .flipped {
@@ -36,6 +38,7 @@
 }
 
 #entrance-page .main-block .flip-container .flip {
+  background: red;
   position: relative;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -46,6 +49,7 @@
 }
 
 #entrance-page .main-block .flip-container .flip #login-side {
+  width: 100%;
   position: absolute;
   box-sizing: border-box;
   -webkit-backface-visibility: hidden;
@@ -53,6 +57,7 @@
 }
 
 #entrance-page .main-block .flip-container .flip #signup-side {
+  width: 100%;
   position: absolute;
   box-sizing: border-box;
   -webkit-backface-visibility: hidden;
@@ -63,14 +68,13 @@
 
 #entrance-page .main-block .entrance-container {
   padding: 20px;
+  box-sizing: border-box;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form {
   background: rgba(0, 0, 0, 0.7);
   padding: 50px;
   border-radius: 2px;
-  box-sizing: border-box;
-  width: 350px;
 }
 
 #entrance-page .main-block .entrance-container .entrance-form .heading {
