@@ -728,14 +728,15 @@ main {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  -webkit-filter: brightness(50%);
-  filter: brightness(50%);
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 #place-page .text-with-img .text-wrapper {
-  color: white;
-  font-size: 24px;
   margin: 0 0 20px 0;
   -webkit-box-pack: start;
   justify-content: flex-start;
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
 }

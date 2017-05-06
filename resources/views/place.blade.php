@@ -12,8 +12,8 @@
 			</div>
 			<div class="text-wrapper flexbox flex-col">
 				<div class="place-name">Lorem Ipsum</div>
-				<div class="place-name">Price</div>
-				<div class="place-name">Rating</div>
+				<div class="place-price">Price</div>
+				<div class="place-rating">Rating</div>
 			</div>
 		</div>
 	</section>
