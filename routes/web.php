@@ -11,8 +11,20 @@
 |
 */
 
+use App\Category;
+
 Route::get('/', function () {
-	return view('home');
+
+	// $category = new Category;
+	// $category->name = 'drink';
+	// $category->save();
+
+	$categories = Category::all();
+
+	foreach ($categories as $cat)
+		echo $cat->name . " ";
+
+	return view('home', ['categories' => $categories]);
 });
 
 Route::get('/list', function () {

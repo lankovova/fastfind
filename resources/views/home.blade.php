@@ -17,22 +17,22 @@
 			<div class="choose-type-container">
 				<div class="chose-type flexbox">
 					<div class="type-container">
-						<a href="/list">
+						<a href="{{ url('list') }}">
 							<div class="type"><i class="fa fa-cutlery"></i> Food</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="/list">
+						<a href="{{ url('list') }}">
 							<div class="type"><i class="fa fa-coffee"></i> Drink</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="/list">
+						<a href="{{ url('list') }}">
 							<div class="type"><i class="fa fa-ticket"></i> Money Waste</div>
 						</a>
 					</div>
 					<div class="type-container">
-						<a href="/list">
+						<a href="{{ url('list') }}">
 							<div class="type"><i class="fa fa-university"></i> Culture</div>
 						</a>
 					</div>
