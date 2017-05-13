@@ -1,13 +1,5 @@
 $(function(){
 
-	$(".flip-entrance-card").click(function(){
-		$("#entrance-page .flip").toggleClass("flipped");
-	});
-
-});
-
-$(function(){
-
 	$(".mobile-menu .burger").click(function(){
 		$(".mobile-menu .dropdown").toggle();
 	});

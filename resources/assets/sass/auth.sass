@@ -19,28 +19,12 @@
 	.main-block
 		height: 100%
 		width: 100%
-		.flip-container
-			perspective: 800px
+		#login-side
 			max-width: 400px
 			width: 400px
-			.flipped
-				transform: rotateY(180deg)
-			.flip
-				background: red
-				position: relative
-				transform-style: preserve-3d
-				transition: transform 500ms ease-in-out
-				#login-side
-					width: 100%
-					position: absolute
-					box-sizing: border-box
-					backface-visibility: hidden
-				#signup-side
-					width: 100%
-					position: absolute
-					box-sizing: border-box
-					backface-visibility: hidden
-					transform: rotateY(180deg)
+		#signup-side
+			max-width: 400px
+			width: 400px
 		.entrance-container
 			padding: 20px
 			box-sizing: border-box
@@ -69,7 +53,7 @@
 						&::placeholder
 							color: darken(white, 20)
 							transition: color 300ms ease
-					input[type="text"], input[type="password"]
+					input[type="email"], input[type="text"], input[type="password"]
 						&:focus
 							padding: 10px 20px
 							color: black
