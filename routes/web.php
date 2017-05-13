@@ -13,18 +13,22 @@
 
 use App\Category;
 
-Route::get('/', function () {
+// Route::get('/home', function () {
 
-	// $category = new Category;
-	// $category->name = 'drink';
-	// $category->save();
+// 	// $category = new Category;
+// 	// $category->name = 'drink';
+// 	// $category->save();
 
-	// $categories = Category::all();
-	// foreach ($categories as $cat)
-	// 	echo $cat->name . " ";
+// 	// $categories = Category::all();
+// 	// foreach ($categories as $cat)
+// 	// 	echo $cat->name . " ";
 
-	return view('home');
-});
+// 	return view('homemy');
+// });
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index');
 
 Route::get('/list', function () {
 	return view('list');
@@ -38,25 +42,5 @@ Route::get('/about', function () {
 	return view('about');
 });
 
-Auth::routes();
 
-// Route::group(['middleware' => ['web']], function() {
-// // Login Routes...
-//     Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
-//     Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
-//     Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
-
-// // Registration Routes...
-//     Route::get('register', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-//     Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
-
-// // Password Reset Routes...
-//     Route::get('password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-//     Route::post('password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-//     Route::get('password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-//     Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
-// });
-
-
-Route::get('/home', 'HomeController@index');
 

@@ -25,7 +25,15 @@
 			</div>
 			<div class="links flexbox">
 				<a href="#" class="link">About</a>
-				<a href="/auth" class="link">Log In</a>
+				@if (Auth::guest())
+					<a href="{{ route('login') }}" class="link">Login</a>
+				@else
+					<a href="{{ route('login') }}" class="link">{{ Auth::user()->name }}</a>
+					<a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						{{ csrf_field() }}
+					</form>
+				@endif
 			</div>
 			<div class="mobile-menu">
 				<div class="burger flexbox flex-center">
@@ -34,7 +42,12 @@
 				<div class="dropdown">
 					<div class="mob-links flexbox flex-col">
 						<a href="#" class="mob-link">About</a>
-						<a href="/auth" class="mob-link">Log In</a>
+						@if (Auth::guest())
+							<a href="{{ route('login') }}" class="mob-link">Login</a>
+						@else
+							<a href="{{ route('login') }}" class="link">{{ Auth::user()->name }}</a>
+							<a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+						@endif
 					</div>
 				</div>
 			</div>
