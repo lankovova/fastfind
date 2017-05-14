@@ -11,7 +11,7 @@
 				<img src="../images/chicago.jpg" alt="">
 			</div>
 			<div class="text-wrapper">
-				<div class="info-container">
+				<div class="text-container">
 					<div class="place-name">Vogue Café Kiev</div>
 					<div class="place-price">
 						<i class="fa fa-usd" aria-hidden="true"></i>

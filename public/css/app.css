@@ -712,23 +712,23 @@ main {
   padding-top: 80px;
 }
 
-#place-page .text-with-img .text-wrapper .info-container {
+#place-page .text-with-img .text-wrapper .text-container {
   margin: 0 auto;
   color: white;
   font-weight: 900;
   max-width: 1000px;
 }
 
-#place-page .text-with-img .text-wrapper .info-container .place-name {
+#place-page .text-with-img .text-wrapper .text-container .place-name {
   font-size: 26px;
   margin-bottom: 15px;
 }
 
-#place-page .text-with-img .text-wrapper .info-container .place-price {
+#place-page .text-with-img .text-wrapper .text-container .place-price {
   margin-bottom: 5px;
 }
 
-#place-page .text-with-img .text-wrapper .info-container .place-rating {
+#place-page .text-with-img .text-wrapper .text-container .place-rating {
   margin-bottom: 10px;
 }
 
