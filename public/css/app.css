@@ -366,10 +366,10 @@ main {
 
 #home-page .main-block .slogan-container .slogan {
   color: #ffb200;
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 900;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 5px black;
 }
 
 @media screen and (max-width: 380px) {
@@ -582,6 +582,8 @@ main {
 }
 
 .card-container {
+  padding: 5px;
+  box-sizing: border-box;
   width: 20%;
 }
 
@@ -622,15 +624,15 @@ main {
 }
 
 .card {
-  margin: 5px;
+  height: 100%;
   border-radius: 2px;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
 
 .card:hover {
-  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.4);
 }
 
 .card .card-img {
