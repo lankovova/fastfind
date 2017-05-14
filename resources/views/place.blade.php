@@ -8,7 +8,7 @@
 	<section>
 		<div class="text-with-img flexbox">
 			<div class="image-container">
-				<img src="../images/chicago.jpg" alt="">
+				<img src="../images/places/restaurant.jpg" alt="">
 			</div>
 			<div class="text-wrapper">
 				<div class="text-container">
@@ -20,8 +20,7 @@
 						<i class="fa fa-usd" aria-hidden="true"></i>
 					</div>
 					<div class="place-rating">
-						Rating 4 / 5
-						<i class="fa fa-star" aria-hidden="true"></i>
+						9.2/10 <i class="fa fa-star" aria-hidden="true"></i>
 					</div>
 				</div>
 			</div>

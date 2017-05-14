@@ -716,12 +716,12 @@ main {
   margin: 0 auto;
   color: white;
   font-weight: 900;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container .place-name {
-  font-size: 26px;
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container .place-price {
@@ -729,11 +729,11 @@ main {
 }
 
 #place-page .text-with-img .text-wrapper .text-container .place-rating {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 #place-page .row {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
