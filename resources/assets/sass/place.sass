@@ -53,14 +53,14 @@
 	.place-info-container
 		display: flex
 		align-items: center
+		width: 100%
 		.place-description
 			text-align: justify
 			padding: 10px 20px
 			border-right: 1px solid lighten(black, 80)
-			flex: 1
 		.place-details
 			padding: 10px 20px
-			max-width: 240px
+			min-width: 260px
 			display: flex
 			flex-flow: column
 			justify-content: center
@@ -78,8 +78,77 @@
 			flex-flow: column
 			.place-description
 				border: none
-	.reviews
+	.reviews-container
 		padding: 10px 20px
+		.leave-review-container
+			margin-bottom: 20px
+			.heading
+				text-transform: uppercase
+				font-size: 20px
+				margin-bottom: 10px
+			form
+				display: flex
+				flex-flow: column
+				textarea
+					width: 100%
+					resize: vertical
+					border: 1px solid lighten(black, 80)
+					border-radius: 3px
+					padding: 5px 10px
+					box-sizing: border-box
+					transition: border 200ms ease-in-out
+					outline: none
+					&:focus
+						border: 1px solid $accent-color
+				input[type="submit"]
+					width: 200px
+					border: none
+					outline: none
+					background: lighten($accent-color, 5)
+					padding: 5px 0
+					cursor: pointer
+					transition: all 300ms ease-in-out
+					margin-top: 5px
+					align-self: flex-end
+					@media screen and (max-width: 400px)
+						width: 100%
+					&:hover
+						background: black
+						color: white
+		.reviews
+			.heading
+				width: 100%
+				margin-bottom: 20px
+				font-size: 18px
+			.review
+				display: flex
+				margin-bottom: 20px
+				.left-review-part
+					width: 60px
+					.image-container
+						font-size: 0
+						img
+							border-radius: 50%
+							width: 100%
+							height: 100%
+							object-fit: cover
+				.right-review-part
+					width: calc(100% - 60px)
+					box-sizing: border-box
+					padding-left: 20px
+					display: flex
+					flex-wrap: wrap
+					.name
+						font-weight: 900
+					.rate
+						font-size: 14px
+						margin-left: 10px
+						i
+							color: $accent-color
+					.text
+						width: 100%
+						font-size: 15px
+						text-align: justify
 
 
 
