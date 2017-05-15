@@ -65,7 +65,7 @@
 		<div class="row">
 			<div class="reviews-container">
 				<div class="leave-review-container">
-					<div class="heading">Leave Review</div>
+					<div class="heading">Add Review</div>
 					<form action="">
 						<textarea name="leave-review-area" id="leave-review-area" rows="5" required></textarea>
 						<input type="submit" value="Leave Review">

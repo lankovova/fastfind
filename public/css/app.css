@@ -913,11 +913,11 @@ main {
 
 #place-page .reviews-container .reviews .review .right-review-part .name {
   font-weight: 900;
+  margin-right: 10px;
 }
 
 #place-page .reviews-container .reviews .review .right-review-part .rate {
   font-size: 14px;
-  margin-left: 10px;
 }
 
 #place-page .reviews-container .reviews .review .right-review-part .rate i {
