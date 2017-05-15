@@ -35,13 +35,22 @@
 				</div>
 				<div class="place-details">
 					<div class="work-time">
-						8:00 - 23:00
+						<div class="icon">
+							<i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+						</div>
+						<div class="value">8:00 - 23:00</div>
 					</div>
 					<div class="address">
-						Kiev Khreschatuk street
+						<div class="icon">
+							<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+						</div>
+						<div class="value">Kiev Khreschatyk street</div>
 					</div>
 					<div class="telephone">
-						8-800-555-55-55
+						<div class="icon">
+							<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+						</div>
+						<div class="value">8-800-555-55-55</div>
 					</div>
 				</div>
 			</div>
@@ -54,7 +63,9 @@
 
 	<section>
 		<div class="row">
-			Reviews
+			<div class="reviews">
+				Reviews
+			</div>
 		</div>
 	</section>
 </div>

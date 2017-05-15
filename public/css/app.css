@@ -680,7 +680,7 @@ main {
 }
 
 #place-page section {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #place-page .row {
@@ -690,7 +690,7 @@ main {
 
 #place-page #map {
   width: 100%;
-  height: 400px;
+  height: 500px;
   background-color: grey;
 }
 
@@ -724,7 +724,7 @@ main {
   background: -webkit-linear-gradient(bottom, black, transparent);
   background: linear-gradient(to top, black, transparent);
   width: 100%;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container {
@@ -732,6 +732,9 @@ main {
   color: white;
   font-weight: 900;
   max-width: 1200px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  font-size: 18px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container .place-name {
@@ -743,19 +746,73 @@ main {
   margin-bottom: 5px;
 }
 
+#place-page .text-with-img .text-wrapper .text-container .place-price i {
+  color: #FFBA19;
+}
+
 #place-page .text-with-img .text-wrapper .text-container .place-rating {
   margin-bottom: 15px;
+}
+
+#place-page .text-with-img .text-wrapper .text-container .place-rating i {
+  color: #FFBA19;
 }
 
 #place-page .place-info-container {
   display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+#place-page .place-info-container .place-description {
+  text-align: justify;
+  padding: 10px 20px;
+  border-right: 1px solid #cccccc;
+  -webkit-box-flex: 1;
+  flex: 1;
 }
 
 #place-page .place-info-container .place-details {
+  padding: 10px 20px;
+  max-width: 240px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-flow: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 18px;
+  text-align: center;
+}
+
+#place-page .place-info-container .place-details > div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#place-page .place-info-container .place-details .icon {
+  width: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  #place-page .place-info-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+  }
+  #place-page .place-info-container .place-description {
+    border: none;
+  }
+}
+
+#place-page .reviews {
+  padding: 10px 20px;
 }
