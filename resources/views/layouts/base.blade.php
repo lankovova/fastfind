@@ -31,7 +31,7 @@
 				@if (Auth::guest())
 					<a href="{{ route('login') }}" class="link">Login</a>
 				@else
-					<a href="{{ route('login') }}" class="link">{{ Auth::user()->name }}</a>
+					<a href="{{ route('home') }}" class="link">{{ Auth::user()->name }}</a>
 					<a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 						{{ csrf_field() }}

@@ -603,6 +603,15 @@ main {
   cursor: pointer;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+#list-page .cards-map-container .order-container .order .orderby i {
+  margin-left: 2px;
+  font-size: 12px;
 }
 
 #list-page .cards-map-container .order-container .order .orderby:hover {
@@ -736,7 +745,7 @@ main {
 #place-page .text-with-img {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
   -webkit-box-align: end;
   align-items: flex-end;
   -webkit-box-pack: center;
@@ -795,7 +804,7 @@ main {
   color: white;
   font-size: 14px;
   font-weight: normal;
-  padding: 5px;
+  padding: 5px 10px;
   margin-right: 5px;
   margin-bottom: 5px;
   border-radius: 7px;
@@ -820,8 +829,6 @@ main {
 #place-page .place-info-container {
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
   width: 100%;
 }
 
@@ -829,6 +836,10 @@ main {
   text-align: justify;
   padding: 10px 20px;
   border-right: 1px solid #cccccc;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
 }
 
 #place-page .place-info-container .place-details {
@@ -858,6 +869,18 @@ main {
 #place-page .place-info-container .place-details .icon {
   width: 40px;
   text-align: center;
+}
+
+#place-page .place-info-container .place-details .website a {
+  color: black;
+  border-bottom: 1px solid #b3b3b3;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+#place-page .place-info-container .place-details .website a:hover {
+  color: #e5a000;
+  border-color: #666666;
 }
 
 @media screen and (max-width: 700px) {

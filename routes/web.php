@@ -28,19 +28,19 @@ use App\Category;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/list', function () {
 	return view('list');
-});
+})->name('list');
 
 Route::get('/place/{name}', function ($name) {
 	return view('place', ['name' => $name]);
-});
+})->name('place');
 
 Route::get('/about', function () {
 	return view('about');
-});
+})->name('about');
 
 
 

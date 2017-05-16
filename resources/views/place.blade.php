@@ -58,6 +58,12 @@
 						</div>
 						<div class="value">8-800-555-55-55</div>
 					</div>
+					<div class="website">
+						<div class="icon">
+							<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+						</div>
+						<div class="value"><a href="https://vino-grad.kiev.ua/" target="_blank">website</a></div>
+					</div>
 				</div>
 			</div>
 		</div>
