@@ -570,6 +570,39 @@ main {
   overflow-y: auto;
 }
 
+#list-page .cards-map-container .order-container {
+  padding: 10px 15px 0 15px;
+  box-sizing: border-box;
+}
+
+#list-page .cards-map-container .order-container .order {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.4);
+}
+
+#list-page .cards-map-container .order-container .order .heading {
+  font-weight: 900;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+
+#list-page .cards-map-container .order-container .order .orderby {
+  margin-right: 20px;
+  cursor: pointer;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+#list-page .cards-map-container .order-container .order .orderby:hover {
+  color: #e5a000;
+}
+
 @media screen and (max-width: 600px) {
   #list-page .cards-map-container {
     width: 100%;
@@ -724,7 +757,7 @@ main {
   background: -webkit-linear-gradient(bottom, black, transparent);
   background: linear-gradient(to top, black, transparent);
   width: 100%;
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container {
@@ -739,7 +772,27 @@ main {
 
 #place-page .text-with-img .text-wrapper .text-container .place-name {
   font-size: 30px;
-  margin-bottom: 10px;
+  line-height: 40px;
+}
+
+#place-page .text-with-img .text-wrapper .text-container .tags {
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#place-page .text-with-img .text-wrapper .text-container .tags .tag {
+  cursor: pointer;
+  background: rgba(255, 186, 25, 0.5);
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 7px;
 }
 
 #place-page .text-with-img .text-wrapper .text-container .place-price {

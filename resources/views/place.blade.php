@@ -13,6 +13,11 @@
 			<div class="text-wrapper">
 				<div class="text-container">
 					<div class="place-name">Vogue Café Kiev</div>
+					<div class="tags">
+						<div class="tag">Food</div>
+						<div class="tag">Restaurant</div>
+						<div class="tag">Italian cuisine</div>
+					</div>
 					<div class="place-price">
 						<i class="fa fa-usd" aria-hidden="true"></i>
 						<i class="fa fa-usd" aria-hidden="true"></i>

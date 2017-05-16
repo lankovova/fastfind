@@ -17,6 +17,24 @@
 		</div>
 	</div>
 	<div class="cards-map-container">
+
+		<div class="order-container">
+			<div class="order">
+				<div class="heading">
+					Order by
+				</div>
+				<div class="orderby">
+					Name <i class="fa fa-chevron-down" aria-hidden="true"></i>
+				</div>
+				<div class="orderby">
+					Rating <i class="fa fa-chevron-down" aria-hidden="true"></i>
+				</div>
+				<div class="orderby">
+					Price <i class="fa fa-chevron-down" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+
 		<div class="cards flexbox">
 
 			<div class="card-container">
