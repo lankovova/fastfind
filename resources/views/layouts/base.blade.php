@@ -64,5 +64,7 @@
 	<script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="../js/app.js"></script>
 
+	@yield('scripts')
+
 </body>
 </html>

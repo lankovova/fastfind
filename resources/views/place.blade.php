@@ -65,10 +65,10 @@
 		<div class="row">
 			<div class="reviews-container">
 				<div class="leave-review-container">
-					<div class="heading">Add Review</div>
+					<div class="heading">Leave Review</div>
 					<form action="">
 						<textarea name="leave-review-area" id="leave-review-area" rows="5" required></textarea>
-						<input type="submit" value="Leave Review">
+						<input type="submit" value="Add Review">
 					</form>
 				</div>
 				<div class="reviews">
@@ -156,4 +156,23 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ"></script>
 
+@stop
+
+@section('scripts')
+<script>
+	$(function() {
+		(function initMap() {
+			var uluru = {lat: 50.449739, lng: 30.523724};
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 17,
+				center: uluru,
+				scrollwheel: false
+			});
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map
+			});
+		})();
+	});
+</script>
 @stop
