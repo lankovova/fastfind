@@ -38,6 +38,10 @@ Route::get('/place/{name}', function ($name) {
 	return view('place', ['name' => $name]);
 })->name('place');
 
+Route::get('/profile', function () {
+	return view('profile');
+})->name('profile');
+
 Route::get('/about', function () {
 	return view('about');
 })->name('about');
