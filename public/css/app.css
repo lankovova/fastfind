@@ -586,14 +586,20 @@ main {
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 400px) {
+  #list-page .cards-map-container .order-container .order {
+    padding: 10px;
+  }
+}
+
 #list-page .cards-map-container .order-container .order .heading {
   font-weight: 900;
-  margin-right: 30px;
+  margin-right: 15px;
   text-transform: uppercase;
 }
 
 #list-page .cards-map-container .order-container .order .orderby {
-  margin-right: 20px;
+  margin-right: 10px;
   cursor: pointer;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;

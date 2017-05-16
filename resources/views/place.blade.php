@@ -23,6 +23,7 @@
 						<i class="fa fa-usd" aria-hidden="true"></i>
 						<i class="fa fa-usd" aria-hidden="true"></i>
 						<i class="fa fa-usd" aria-hidden="true"></i>
+						<i class="fa fa-usd" aria-hidden="true"></i>
 					</div>
 					<div class="place-rating">
 						9.2/10 <i class="fa fa-star" aria-hidden="true"></i>
@@ -159,25 +160,21 @@
 	</div>
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ"></script>
-
-@stop
-
-@section('scripts')
 <script>
-	$(function() {
-		(function initMap() {
-			var uluru = {lat: 50.449739, lng: 30.523724};
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 17,
-				center: uluru,
-				scrollwheel: false
-			});
-			var marker = new google.maps.Marker({
-				position: uluru,
-				map: map
-			});
-		})();
-	});
+	function initMap() {
+		var uluru = {lat: 50.449739, lng: 30.523724};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 17,
+			center: uluru,
+			scrollwheel: false
+		});
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
+	};
 </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ&callback=initMap"></script>
+
 @stop
