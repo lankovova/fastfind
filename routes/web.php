@@ -11,8 +11,6 @@
 |
 */
 
-use App\Category;
-
 // Route::get('/home', function () {
 
 // 	// $category = new Category;
@@ -31,6 +29,13 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/list', function () {
+	// $categories = App\Category::all();
+
+	// foreach ($categories as $cat) {
+	// 	echo 'category: ' . $cat->name . '<br>';
+	// 	foreach ($cat->places as $wplace)
+	// 		echo $wplace . "<br>";
+	// }
 	return view('list');
 })->name('list');
 

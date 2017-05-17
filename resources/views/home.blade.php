@@ -16,26 +16,20 @@
 			</div>
 			<div class="choose-type-container">
 				<div class="chose-type flexbox">
-					<div class="type-container">
-						<a href="{{ route('list', ['c' => 'food']) }}">
-							<div class="type"><i class="fa fa-cutlery"></i> Food</div>
-						</a>
-					</div>
-					<div class="type-container">
-						<a href="{{ route('list', ['c' => 'drink']) }}">
-							<div class="type"><i class="fa fa-coffee"></i> Drink</div>
-						</a>
-					</div>
-					<div class="type-container">
-						<a href="{{ route('list', ['c' => 'entertainment']) }}">
-							<div class="type"><i class="fa fa-ticket"></i> Entertainment</div>
-						</a>
-					</div>
-					<div class="type-container">
-						<a href="{{ route('list', ['c' => 'culture']) }}">
-							<div class="type"><i class="fa fa-university"></i> Culture</div>
-						</a>
-					</div>
+
+					@php
+						{{-- Icons dictionary --}}
+						$icons = ['cutlery', 'coffee', 'ticket', 'university']
+					@endphp
+
+					@foreach ($categories as $category)
+						<div class="type-container">
+							<a href="{{ route('list', ['c' => $category->name]) }}">
+								<div class="type"><i class="fa fa-{{ $icons[$loop->index] }}"></i> {{ $category->name }}</div>
+							</a>
+						</div>
+					@endforeach
+
 				</div>
 			</div>
 		</div>

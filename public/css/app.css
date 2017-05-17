@@ -435,6 +435,7 @@ main {
 
 #home-page .main-block .choose-type-container .chose-type .type-container {
   margin: 0 5px 5px;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 500px) {
