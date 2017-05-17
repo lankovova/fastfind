@@ -1011,3 +1011,82 @@ main {
   font-size: 15px;
   text-align: justify;
 }
+
+#profile-page .profile-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: flex;
+}
+
+#profile-page .profile-wrapper .left-layer {
+  min-width: 200px;
+  -webkit-box-flex: 1;
+  flex: 1;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+#profile-page .profile-wrapper .left-layer .profile-pic {
+  width: 100%;
+}
+
+#profile-page .profile-wrapper .left-layer .profile-pic img {
+  height: 100%;
+  width: 100%;
+}
+
+#profile-page .profile-wrapper .right-layer {
+  -webkit-box-flex: 3;
+  flex: 3;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info > div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .key {
+  min-width: 120px;
+  color: gray;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .subvalue {
+  align-self: flex-end;
+  margin-left: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .name {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .name .value {
+  font-weight: 900;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .socials .links {
+  display: -webkit-box;
+  display: flex;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .socials .links > div {
+  margin-right: 20px;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .socials .links > div a {
+  color: black;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+
+#profile-page .profile-wrapper .right-layer .detailed-info .socials .links > div a:hover {
+  color: #e5a000;
+}

@@ -1,0 +1,51 @@
+@import "variables"
+
+#profile-page
+	.profile-wrapper
+		max-width: 1000px
+		margin: 0 auto
+
+		display: flex
+		.left-layer
+			min-width: 200px
+			flex: 1
+			padding: 50px
+			box-sizing: border-box
+			.profile-pic
+				width: 100%
+				img
+					height: 100%
+					width: 100%
+		.right-layer
+			flex: 3
+			padding: 50px
+			box-sizing: border-box
+			.detailed-info
+				& > div
+					display: flex
+					align-items: center
+					margin-bottom: 20px
+				.key
+					min-width: 120px
+					color: lighten(black, 50)
+				.subvalue
+					align-self: flex-end
+					margin-left: 10px
+					font-size: 14px
+					color: lighten(black, 50)
+				.name
+					font-size: 20px
+					margin-bottom: 40px
+					.value
+						font-weight: 900
+				.socials
+					.links
+						display: flex
+						& > div
+							margin-right: 20px
+							a
+								color: black
+								transition: color 300ms ease-in-out
+								&:hover
+									color: darken($accent-color, 10)
+
