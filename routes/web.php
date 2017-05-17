@@ -28,16 +28,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/list', function () {
-	// $categories = App\Category::all();
-
-	// foreach ($categories as $cat) {
-	// 	echo 'category: ' . $cat->name . '<br>';
-	// 	foreach ($cat->places as $wplace)
-	// 		echo $wplace . "<br>";
-	// }
-	return view('list');
-})->name('list');
+Route::get('/list', 'ListController@index')->name('list');
 
 Route::get('/place/{name}', function ($name) {
 	return view('place', ['name' => $name]);
