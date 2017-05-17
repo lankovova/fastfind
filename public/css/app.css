@@ -236,8 +236,8 @@ body {
 }
 
 #header .logo {
-  line-height: 50px;
-  height: 50px;
+  line-height: 52px;
+  height: 52px;
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
@@ -262,8 +262,8 @@ body {
 }
 
 #header .links .link {
-  line-height: 50px;
-  height: 50px;
+  line-height: 52px;
+  height: 52px;
   padding: 0 20px;
   text-transform: uppercase;
   font-size: 16px;
@@ -322,7 +322,7 @@ body {
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 52px;
   width: 100%;
 }
 
@@ -481,14 +481,14 @@ main {
   min-width: 300px;
   width: 25%;
   overflow-y: auto;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 52px);
 }
 
 @media screen and (max-width: 600px) {
   #list-page .filters-block {
     width: 100%;
     position: fixed;
-    top: 50px;
+    top: 52px;
     left: 0;
     z-index: 21;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
@@ -524,7 +524,7 @@ main {
 @media screen and (max-width: 600px) {
   #list-page .filters-block .filters-container {
     display: none;
-    min-height: calc(100vh - 50px - 40px);
+    min-height: calc(100vh - 52px - 40px);
   }
 }
 
@@ -566,7 +566,7 @@ main {
 
 #list-page .cards-map-container {
   width: 75%;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 52px);
   overflow-y: auto;
 }
 
@@ -621,7 +621,7 @@ main {
 @media screen and (max-width: 600px) {
   #list-page .cards-map-container {
     width: 100%;
-    max-height: calc(100vh - 50px - 40px);
+    max-height: calc(100vh - 52px - 40px);
     margin-top: 40px;
   }
 }
