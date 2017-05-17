@@ -11,8 +11,8 @@ class ListController extends Controller
     {
         $chosenCategory = $request->input('c', 'all');
 
-        $category = Category::where('name', $chosenCategory)->first()->places;
-        $places = $category->places;
+        $category = Category::where('name', $chosenCategory)->first();
+        $places = $category->places->where('published', true);
 
         return view('list', ['places' => $places]);
     }

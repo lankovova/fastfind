@@ -37,27 +37,34 @@
 
 		<div class="cards flexbox">
 
-			<div class="card-container">
-				<div class="card">
-					<div class="card-img">
-						<a href="/place/porter">
-							<img src="images/places/design.jpeg" alt="">
-						</a>
-					</div>
-					<div class="card-content">
-						<div class="card-title">
-							<a href="/place/porter">Porter Porter Porter Porter Porter Porter Porter Porter Porter Porter</a>
+
+			{{-- Dynamic list start --}}
+
+			@foreach ($places as $place)
+				<div class="card-container">
+					<div class="card">
+						<div class="card-img">
+							<a href="/place/{{ $place->id }}">
+								<img src="images/places/{{ $place->image }}" alt="">
+							</a>
 						</div>
-						<div class="card-top-plate flexbox">
-							<div class="rating">rating</div>
-							<div class="price">price</div>
-						</div>
-						<div class="card-description">
-							long description
+						<div class="card-content">
+							<div class="card-title">
+								<a href="/place/porter">{{ $place->name }}</a>
+							</div>
+							<div class="card-top-plate flexbox">
+								<div class="rating">{{ $place->rating }}</div>
+								<div class="price">{{ $place->average_price }}</div>
+							</div>
+							<div class="card-description">
+								{{ $place->description }}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			@endforeach
+
+			{{-- Dynamic list end --}}
 
 			<div class="card-container">
 				<div class="card">
