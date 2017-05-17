@@ -38,9 +38,8 @@ Route::get('/place/{name}', function ($name) {
 	return view('place', ['name' => $name]);
 })->name('place');
 
-Route::get('/profile', function () {
-	return view('profile');
-})->name('profile');
+Route::get('/profile', 'UserController@showSelf')->name('selfprofile');
+Route::get('/user/{id}', 'UserController@show')->name('userprofile');
 
 Route::get('/about', function () {
 	return view('about');
