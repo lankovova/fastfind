@@ -255,7 +255,7 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   #header .links {
     display: none;
   }
@@ -284,7 +284,7 @@ body {
   justify-content: flex-end;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   #header .mobile-menu {
     display: -webkit-box;
     display: flex;
@@ -1017,14 +1017,35 @@ main {
   margin: 0 auto;
   display: -webkit-box;
   display: flex;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  #profile-page .profile-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+    padding: 20px;
+  }
 }
 
 #profile-page .profile-wrapper .left-layer {
   min-width: 200px;
+  max-width: 250px;
   -webkit-box-flex: 1;
   flex: 1;
-  padding: 50px;
+  padding: 0 20px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  #profile-page .profile-wrapper .left-layer {
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding: 0;
+    margin-bottom: 20px;
+  }
 }
 
 #profile-page .profile-wrapper .left-layer .profile-pic {
@@ -1039,8 +1060,14 @@ main {
 #profile-page .profile-wrapper .right-layer {
   -webkit-box-flex: 3;
   flex: 3;
-  padding: 50px;
+  padding: 0 20px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  #profile-page .profile-wrapper .right-layer {
+    padding: 0;
+  }
 }
 
 #profile-page .profile-wrapper .right-layer .detailed-info > div {
@@ -1052,7 +1079,7 @@ main {
 }
 
 #profile-page .profile-wrapper .right-layer .detailed-info .key {
-  min-width: 120px;
+  min-width: 100px;
   color: gray;
 }
 
@@ -1065,7 +1092,7 @@ main {
 
 #profile-page .profile-wrapper .right-layer .detailed-info .name {
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 #profile-page .profile-wrapper .right-layer .detailed-info .name .value {
@@ -1075,6 +1102,7 @@ main {
 #profile-page .profile-wrapper .right-layer .detailed-info .socials .links {
   display: -webkit-box;
   display: flex;
+  flex-wrap: wrap;
 }
 
 #profile-page .profile-wrapper .right-layer .detailed-info .socials .links > div {
@@ -1089,4 +1117,93 @@ main {
 
 #profile-page .profile-wrapper .right-layer .detailed-info .socials .links > div a:hover {
   color: #e5a000;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper {
+  margin-top: 50px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .heading {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .heading {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part {
+  width: 200px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container {
+  font-size: 0;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container img {
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part {
+  width: calc(100% - 60px);
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .name {
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate {
+  font-size: 14px;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate .place-name {
+  font-weight: 900;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate .place-name::before {
+  content: 'at ';
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate i {
+  color: #FFBA19;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .text {
+  width: 100%;
+  font-size: 15px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 350px) {
+  #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+  }
+  #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part {
+    width: 100%;
+  }
+  #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
