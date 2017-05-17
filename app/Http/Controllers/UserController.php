@@ -20,17 +20,21 @@ class UserController extends Controller
     public function showSelf()
     {
         if (Auth::check()) {
-            return 'my profile';
+            // Get user instance with Auth facade and pass it to view
+            $user = Auth::user();
+            return view('profile', ['user' => $user]);
         }
         else {
-            return 'you don`t have an account. please login';
+            return redirect()->route('login');
         }
-        // return view('home');
     }
 
     public function show($id)
     {
         return 'it`s user ' . $id . ' profile';
-        // return view('home');
+
+        // Get user by id from database
+        // Pass user instance to the view
+        // return view('profile');
     }
 }

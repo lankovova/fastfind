@@ -1,1 +1,1 @@
-Welcome {{ Auth::user()->name }}
+Welcome {{ Auth::user() }}
