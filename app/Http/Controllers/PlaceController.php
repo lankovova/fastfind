@@ -12,8 +12,9 @@ class PlaceController extends Controller
     {
         try {
             $place = Place::findOrFail($id);
+            $placeTags = $place->placeTags;
 
-            return view('place', ['place' => $place]);
+            return view('place', ['place' => $place, 'placeTags' => $placeTags]);
         } catch (ModelNotFoundException $e) {
             // Return 404 page
             return 'There isn\'t such place';

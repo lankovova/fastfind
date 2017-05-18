@@ -10,4 +10,9 @@ class Place extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function placeTags()
+    {
+        return $this->hasMany('App\PlaceTag');
+    }
 }

@@ -13,9 +13,9 @@
 				<div class="text-container">
 					<div class="place-name">{{ $place->name }}</div>
 					<div class="tags">
-						<div class="tag">Food</div>
-						<div class="tag">Restaurant</div>
-						<div class="tag">Italian cuisine</div>
+						@foreach ($placeTags as $pt)
+							<div class="tag">{{ $pt->tag->name }}</div>
+						@endforeach
 					</div>
 					<div class="place-price">
 						@for ($i = 0; $i < 5; $i++)
@@ -41,12 +41,14 @@
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				</div>
 				<div class="place-details">
-					<div class="work-time">
-						<div class="icon">
-							<i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+					@if ($place->work_hours)
+						<div class="work-time">
+							<div class="icon">
+								<i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+							</div>
+							<div class="value">{{ $place->work_hours }}</div>
 						</div>
-						<div class="value">{{ $place->work_hours }}</div>
-					</div>
+					@endif
 					<div class="address">
 						<div class="icon">
 							<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
@@ -59,12 +61,14 @@
 						</div>
 						<div class="value">{{ $place->phone }}</div>
 					</div>
-					<div class="website">
-						<div class="icon">
-							<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+					@if ($place->website)
+						<div class="website">
+							<div class="icon">
+								<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+							</div>
+							<div class="value"><a href="{{ $place->website }}" target="_blank">Website</a></div>
 						</div>
-						<div class="value"><a href="{{ $place->website }}" target="_blank">Website</a></div>
-					</div>
+					@endif
 				</div>
 			</div>
 		</div>
