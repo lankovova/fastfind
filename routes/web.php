@@ -30,6 +30,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/list', 'ListController@index')->name('list');
 
+Route::post('/api/leave_review', 'ReviewController@index')->name('leaveReview');
+
 Route::get('/place/{id}', 'PlaceController@index')->name('place');
 
 // User profile routes

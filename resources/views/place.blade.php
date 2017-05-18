@@ -83,10 +83,18 @@
 			<div class="reviews-container">
 				<div class="leave-review-container">
 					<div class="heading">Leave Review</div>
-					<form action="">
+					@if (Auth::check())
+					<form action="/api/leave_review" method="POST">
+						{{ csrf_field() }}
+						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
+						<input type="hidden" name="placeid" value="{{ $place->id }}">
 						<textarea name="leave-review-area" id="leave-review-area" rows="5" required></textarea>
+						<input type="number" name="rating" min="1" max="10" required>
 						<input type="submit" value="Add Review">
 					</form>
+					@else
+						To leave review please <a href="{{ route('login') }}">login</a>
+					@endif
 				</div>
 				<div class="reviews">
 					<div class="heading">All Reviews ({{ count($placeReviews) }})</div>
