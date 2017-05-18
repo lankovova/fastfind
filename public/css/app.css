@@ -984,7 +984,7 @@ main {
 #place-page .reviews-container .reviews .review {
   display: -webkit-box;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #place-page .reviews-container .reviews .review .left-review-part {
@@ -1007,22 +1007,40 @@ main {
   width: calc(100% - 60px);
   box-sizing: border-box;
   padding-left: 20px;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
 }
 
-#place-page .reviews-container .reviews .review .right-review-part .name {
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part .name {
   font-weight: 900;
   margin-right: 10px;
 }
 
-#place-page .reviews-container .reviews .review .right-review-part .rate {
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part .rate {
   font-size: 14px;
 }
 
-#place-page .reviews-container .reviews .review .right-review-part .rate i {
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part .rate i {
   color: #FFBA19;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .date {
+  font-size: 14px;
+  color: gray;
 }
 
 #place-page .reviews-container .reviews .review .right-review-part .text {

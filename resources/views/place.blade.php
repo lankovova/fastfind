@@ -89,65 +89,35 @@
 					</form>
 				</div>
 				<div class="reviews">
-					<div class="heading">All Reviews</div>
+					<div class="heading">All Reviews ({{ count($placeReviews) }})</div>
 
-					<div class="review">
-						<div class="left-review-part">
-							<div class="image-container">
-								<img src="../images/users/default.jpg" alt="">
+					@foreach ($placeReviews as $review)
+						<div class="review">
+							<div class="left-review-part">
+								<div class="image-container">
+									<img src="../images/users/{{ $review->user->photo }}" alt="">
+								</div>
+							</div>
+							<div class="right-review-part">
+								<div class="top-wrapper">
+									<div class="left-part">
+										<div class="name">
+											{{ $review->user->name }}
+										</div>
+										<div class="rate">
+											{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
+										</div>
+									</div>
+									<div class="date">
+										{{ $review->date }}
+									</div>
+								</div>
+								<div class="text">
+									{{ $review->text }}
+								</div>
 							</div>
 						</div>
-						<div class="right-review-part">
-							<div class="name">
-								lankovova
-							</div>
-							<div class="rate">
-								9/10 <i class="fa fa-star" aria-hidden="true"></i>
-							</div>
-							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-							</div>
-						</div>
-					</div>
-
-					<div class="review">
-						<div class="left-review-part">
-							<div class="image-container">
-								<img src="../images/users/default.jpg" alt="">
-							</div>
-						</div>
-						<div class="right-review-part">
-							<div class="name">
-								Kate
-							</div>
-							<div class="rate">
-								10/10 <i class="fa fa-star" aria-hidden="true"></i>
-							</div>
-							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-							</div>
-						</div>
-					</div>
-
-					<div class="review">
-						<div class="left-review-part">
-							<div class="image-container">
-								<img src="../images/users/default.jpg" alt="">
-							</div>
-						</div>
-						<div class="right-review-part">
-							<div class="name">
-								olimpik
-							</div>
-							<div class="rate">
-								7/10 <i class="fa fa-star" aria-hidden="true"></i>
-							</div>
-							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-							</div>
-						</div>
-					</div>
-
+					@endforeach
 
 				</div>
 			</div>

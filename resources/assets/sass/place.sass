@@ -149,7 +149,7 @@
 				font-size: 18px
 			.review
 				display: flex
-				margin-bottom: 20px
+				margin-bottom: 30px
 				.left-review-part
 					width: 60px
 					.image-container
@@ -163,15 +163,25 @@
 					width: calc(100% - 60px)
 					box-sizing: border-box
 					padding-left: 20px
-					display: flex
-					flex-wrap: wrap
-					.name
-						font-weight: 900
-						margin-right: 10px
-					.rate
-						font-size: 14px
-						i
-							color: $accent-color
+					.top-wrapper
+						display: flex
+						flex-wrap: wrap
+						justify-content: space-between
+						width: 100%
+						margin-bottom: 5px
+						.left-part
+							display: flex
+							flex-wrap: wrap
+							.name
+								font-weight: 900
+								margin-right: 10px
+							.rate
+								font-size: 14px
+								i
+									color: $accent-color
+						.date
+							font-size: 14px
+							color: lighten(black, 50)
 					.text
 						width: 100%
 						font-size: 15px

@@ -15,4 +15,9 @@ class Place extends Model
     {
         return $this->hasMany('App\PlaceTag');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
+    }
 }
