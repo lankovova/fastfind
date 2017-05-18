@@ -53,8 +53,18 @@
 								<a href="/place/porter">{{ $place->name }}</a>
 							</div>
 							<div class="card-top-plate flexbox">
-								<div class="rating">{{ $place->rating }}</div>
-								<div class="price">{{ $place->average_price }}</div>
+								<div class="price">
+									@for ($i = 0; $i < 5; $i++)
+										@if ($i < $place->average_price)
+											<i class="fa fa-usd filled" aria-hidden="true"></i>
+										@else
+											<i class="fa fa-usd default" aria-hidden="true"></i>
+										@endif
+									@endfor
+								</div>
+								<div class="rating">
+									{{ $place->rating }} <i class="fa fa-star" aria-hidden="true"></i>
+								</div>
 							</div>
 							<div class="card-description">
 								{{ $place->description }}

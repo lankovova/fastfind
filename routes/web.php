@@ -30,9 +30,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/list', 'ListController@index')->name('list');
 
-Route::get('/place/{name}', function ($name) {
-	return view('place', ['name' => $name]);
-})->name('place');
+Route::get('/place/{id}', 'PlaceController@index')->name('place');
 
 // User profile routes
 Route::get('/profile', 'UserController@showSelf')->name('selfprofile');

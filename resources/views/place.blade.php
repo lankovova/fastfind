@@ -12,21 +12,23 @@
 			</div>
 			<div class="text-wrapper">
 				<div class="text-container">
-					<div class="place-name">Vogue Café Kiev</div>
+					<div class="place-name">{{ $place->name }}</div>
 					<div class="tags">
 						<div class="tag">Food</div>
 						<div class="tag">Restaurant</div>
 						<div class="tag">Italian cuisine</div>
 					</div>
 					<div class="place-price">
-						<i class="fa fa-usd" aria-hidden="true"></i>
-						<i class="fa fa-usd" aria-hidden="true"></i>
-						<i class="fa fa-usd" aria-hidden="true"></i>
-						<i class="fa fa-usd" aria-hidden="true"></i>
-						<i class="fa fa-usd" aria-hidden="true"></i>
+						@for ($i = 0; $i < 5; $i++)
+							@if ($i < $place->average_price)
+								<i class="fa fa-usd filled" aria-hidden="true"></i>
+							@else
+								<i class="fa fa-usd default" aria-hidden="true"></i>
+							@endif
+						@endfor
 					</div>
 					<div class="place-rating">
-						9.2/10 <i class="fa fa-star" aria-hidden="true"></i>
+						{{ $place->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
 					</div>
 				</div>
 			</div>
@@ -44,25 +46,25 @@
 						<div class="icon">
 							<i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
 						</div>
-						<div class="value">8:00 - 23:00</div>
+						<div class="value">{{ $place->work_hours }}</div>
 					</div>
 					<div class="address">
 						<div class="icon">
 							<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
 						</div>
-						<div class="value">Kiev Khreschatyk street</div>
+						<div class="value" id="place_address">{{ $place->address }}</div>
 					</div>
 					<div class="telephone">
 						<div class="icon">
 							<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
 						</div>
-						<div class="value">8-800-555-55-55</div>
+						<div class="value">{{ $place->phone }}</div>
 					</div>
 					<div class="website">
 						<div class="icon">
 							<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
 						</div>
-						<div class="value"><a href="https://vino-grad.kiev.ua/" target="_blank">website</a></div>
+						<div class="value"><a href="{{ $place->website }}" target="_blank">Website</a></div>
 					</div>
 				</div>
 			</div>
@@ -166,18 +168,40 @@
 	</div>
 </div>
 
-<script>
+<script type="text/javascript">
+	function httpGetAsync(theUrl, callback)
+	{
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+				callback(xmlHttp.responseText);
+			}
+		}
+		xmlHttp.open("GET", theUrl, true);
+		xmlHttp.send(null);
+	}
+
+	function setLocation(address) {
+		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + address +
+					'&key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ',
+					function(response)
+					{
+						var uluru = JSON.parse(response).results[0].geometry.location;
+						var map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 17,
+							center: uluru,
+							scrollwheel: false
+						});
+						var marker = new google.maps.Marker({
+							position: uluru,
+							map: map
+						});
+
+					});
+	}
+
 	function initMap() {
-		var uluru = {lat: 50.449739, lng: 30.523724};
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 17,
-			center: uluru,
-			scrollwheel: false
-		});
-		var marker = new google.maps.Marker({
-			position: uluru,
-			map: map
-		});
+		setLocation( document.getElementById("place_address").innerHTML );
 	};
 </script>
 
