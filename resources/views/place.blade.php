@@ -3,12 +3,11 @@
 @section('title', 'FF - Place')
 
 @section('main')
-
 <div id="place-page">
 	<section>
 		<div class="text-with-img flexbox">
 			<div class="image-container">
-				<img src="../images/places/restaurant.jpg" alt="">
+				<img src="../images/places/{{ $place->image }}" alt="">
 			</div>
 			<div class="text-wrapper">
 				<div class="text-container">
@@ -52,7 +51,7 @@
 						<div class="icon">
 							<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
 						</div>
-						<div class="value" id="place_address">{{ $place->address }}</div>
+						<div class="value" id="place_address_for_map">{{ $place->address }}</div>
 					</div>
 					<div class="telephone">
 						<div class="icon">
@@ -168,43 +167,31 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	function httpGetAsync(theUrl, callback)
-	{
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.onreadystatechange = function() {
-			if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-				callback(xmlHttp.responseText);
-			}
-		}
-		xmlHttp.open("GET", theUrl, true);
-		xmlHttp.send(null);
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ"></script>
+@stop
+
+@section('scripts')
+<script>
+	$(function() {
+
+		$.get( 'https://maps.googleapis.com/maps/api/geocode/json?address=' + $('#place_address_for_map').text() + '&key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ' )
+			.done(function( response ) {
+				var loc = response.results[0].geometry.location;
+				initMap(loc);
+			});
+
+	});
+
+	function initMap(uluru) {
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 17,
+			center: uluru,
+			scrollwheel: false
+		});
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
 	}
-
-	function setLocation(address) {
-		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + address +
-					'&key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ',
-					function(response)
-					{
-						var uluru = JSON.parse(response).results[0].geometry.location;
-						var map = new google.maps.Map(document.getElementById('map'), {
-							zoom: 17,
-							center: uluru,
-							scrollwheel: false
-						});
-						var marker = new google.maps.Marker({
-							position: uluru,
-							map: map
-						});
-
-					});
-	}
-
-	function initMap() {
-		setLocation( document.getElementById("place_address").innerHTML );
-	};
 </script>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ&callback=initMap"></script>
-
 @stop
