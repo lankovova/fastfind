@@ -88,8 +88,8 @@
 						{{ csrf_field() }}
 						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="placeid" value="{{ $place->id }}">
-						<textarea name="leave-review-area" id="leave-review-area" rows="5" required></textarea>
-						<input type="number" name="rating" min="1" max="10" required>
+						<textarea name="leave-review-area" placeholder="Review text here" id="leave-review-area" rows="5" required></textarea>
+						<input type="number" placeholder="Rate this place [1-10]" id="rating-review" name="rating" min="1" max="10" required>
 						<input type="submit" value="Add Review">
 					</form>
 					@else

@@ -951,6 +951,12 @@ main {
   border: 1px solid #FFBA19;
 }
 
+#place-page .reviews-container .leave-review-container form input[type="number"] {
+  margin-top: 5px;
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+}
+
 #place-page .reviews-container .leave-review-container form input[type="submit"] {
   width: 200px;
   border: none;
