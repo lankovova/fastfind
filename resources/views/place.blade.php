@@ -167,7 +167,7 @@
 	</div>
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-fZhgOgEznL6N2NGE4VySEsYiErRHEQ"></script>
 @stop
 
 @section('scripts')

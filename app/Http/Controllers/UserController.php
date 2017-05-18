@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UserController extends Controller
 {
@@ -31,10 +32,15 @@ class UserController extends Controller
 
     public function show($id)
     {
-        return 'it`s user ' . $id . ' profile';
+        try {
+            // Get user by id from database
+            $user = User::findOrFail($id);
+            // Pass user instance to the view
+            return view('profile', ['user' => $user]);
+        } catch (ModelNotFoundException $e) {
+            // Return 404 page
+            return 'There isn\'t such place';
+        }
 
-        // Get user by id from database
-        // Pass user instance to the view
-        // return view('profile');
     }
 }

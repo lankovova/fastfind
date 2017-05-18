@@ -9,44 +9,56 @@
 	<div class="profile-wrapper">
 		<div class="left-layer">
 			<div class="profile-pic">
-				<img src="../images/users/default.jpg" alt="">
+				<img src="../images/users/{{ $user->photo }}" alt="">
 			</div>
-			<div class="actions">
-				<a href="/profile/edit">Edit profile</a>
-			</div>
+			@if (Auth::user()->id == $user->id)
+				<div class="actions">
+					<a href="/profile/edit">Edit profile</a>
+				</div>
+			@endif
 		</div>
 		<div class="right-layer">
 			<div class="detailed-info">
 				<div class="name">
 					<div class="key">Name</div>
-					<div class="value">lankovova</div>
-					<div class="subvalue">(admin)</div>
-				</div>
-				<div class="birth">
-					<div class="key">Birthday</div>
-					<div class="value">19 July 1996</div>
+					<div class="value">{{ $user->name }}</div>
+					<div class="subvalue">({{ $user->type }})</div>
 				</div>
 				<div class="email">
 					<div class="key">Email</div>
-					<div class="value">lanko.vova@gmail.com</div>
+					<div class="value">{{ $user->email }}</div>
 				</div>
-				<div class="address">
-					<div class="key">Address</div>
-					<div class="value">Kyiv Pecherskyi dist</div>
-				</div>
-				<div class="telephone">
-					<div class="key">Telephone</div>
-					<div class="value">080055555</div>
-				</div>
-				<div class="socials">
-					<div class="key">Socials</div>
-					<div class="links">
-						<div class="facebook"><a href=""><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></div>
-						<div class="twitter"><a href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></div>
-						<div class="google"><a href=""><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></div>
-						<div class="vk"><a href=""><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a></div>
+				@if ($user->address)
+					<div class="address">
+						<div class="key">Address</div>
+						<div class="value">{{ $user->address }}</div>
 					</div>
-				</div>
+				@endif
+				@if ($user->phone)
+					<div class="telephone">
+						<div class="key">Telephone</div>
+						<div class="value">{{ $user->phone }}</div>
+					</div>
+				@endif
+				@if ($user->facebook || $user->twitter || $user->googleplus || $user->vk)
+					<div class="socials">
+						<div class="key">Socials</div>
+						<div class="links">
+							@if ($user->facebook)
+								<div class="facebook"><a href="{{ $user->facebook }}"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></div>
+							@endif
+							@if ($user->twitter)
+								<div class="twitter"><a href="{{ $user->twitter }}"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></div>
+							@endif
+							@if ($user->googleplus)
+								<div class="google"><a href="{{ $user->googleplus }}"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></div>
+							@endif
+							@if ($user->vk)
+								<div class="vk"><a href="{{ $user->vk }}"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a></div>
+							@endif
+						</div>
+					</div>
+				@endif
 			</div>
 
 			<div class="reviews-wrapper">
