@@ -863,7 +863,7 @@ main {
 
 #place-page .place-info-container .place-details {
   padding: 10px 20px;
-  min-width: 300px;
+  min-width: 200px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
