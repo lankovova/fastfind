@@ -75,13 +75,13 @@
 					.review
 						display: flex
 						margin-bottom: 20px
-
 						.left-review-part
-							width: 200px
 							.image-container
 								font-size: 0
+								height: 100px
+								width: 100px
 								img
-									border-radius: 3px
+									border-radius: 50%
 									width: 100%
 									height: 100%
 									object-fit: cover
@@ -90,19 +90,23 @@
 							box-sizing: border-box
 							padding-left: 20px
 							display: flex
-							flex-wrap: wrap
-							.name
-								font-weight: 900
-								margin-right: 10px
-							.rate
-								font-size: 14px
-								.place-name
-									font-weight: 900
-									&::before
-										// font-weight: normal
-										content: 'at '
-								i
-									color: $accent-color
+							flex-flow: column
+							.top-wrapper
+								display: flex
+								flex-wrap: wrap
+								justify-content: space-between
+								margin-bottom: 5px
+								.rate
+									font-size: 14px
+									.place-name
+										font-weight: 900
+										&::before
+											content: 'at '
+									i
+										color: $accent-color
+								.date
+									color: lighten(black, 50)
+									font-size: 14px
 							.text
 								width: 100%
 								font-size: 15px
@@ -111,6 +115,12 @@
 							flex-flow: column
 							.left-review-part
 								width: 100%
+								.image-container
+									width: 100%
+									height: 150px
+									img
+										border-radius: 0
 							.right-review-part
 								width: 100%
 								padding: 10px 0
+

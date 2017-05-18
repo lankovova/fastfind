@@ -63,59 +63,34 @@
 
 			<div class="reviews-wrapper">
 				<div class="heading">
-					Reviews (3)
+					Reviews ({{ count($reviews) }})
 				</div>
 				<div class="reviews">
-					<div class="review">
-						<div class="left-review-part">
-							<div class="image-container">
-								<img src="../images/places/restaurant.jpg" alt="">
-							</div>
-						</div>
-						<div class="right-review-part">
-							<div class="rate">
-								10/10 <i class="fa fa-star" aria-hidden="true"></i>
-								<span class="place-name"><a href="#">Vogue cafe</a></span>
-							</div>
-							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-							</div>
-						</div>
-					</div>
 
+					@foreach ($reviews as $review)
 					<div class="review">
 						<div class="left-review-part">
 							<div class="image-container">
-								<img src="../images/places/bar.jpg" alt="">
+								<img src="../images/places/{{ $review->place->image }}" alt="">
 							</div>
 						</div>
 						<div class="right-review-part">
-							<div class="rate">
-								7/10 <i class="fa fa-star" aria-hidden="true"></i>
-								<span class="place-name"><a href="#">Porter pub</a></span>
+							<div class="top-wrapper">
+								<div class="rate">
+									{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
+									<span class="place-name"><a href="{{ route('place', [ 'id' => $review->place_id]) }}">{{ $review->place->name }}</a></span>
+								</div>
+								<div class="date">
+									{{ $review->date }}
+								</div>
 							</div>
 							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+								{{ $review->text }}
 							</div>
 						</div>
 					</div>
+					@endforeach
 
-					<div class="review">
-						<div class="left-review-part">
-							<div class="image-container">
-								<img src="../images/places/restaurant.jpg" alt="">
-							</div>
-						</div>
-						<div class="right-review-part">
-							<div class="rate">
-								5/10 <i class="fa fa-star" aria-hidden="true"></i>
-								<span class="place-name"><a href="#">Patrik pub</a></span>
-							</div>
-							<div class="text">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 

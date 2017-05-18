@@ -993,12 +993,10 @@ main {
   margin-bottom: 30px;
 }
 
-#place-page .reviews-container .reviews .review .left-review-part {
-  width: 60px;
-}
-
 #place-page .reviews-container .reviews .review .left-review-part .image-container {
   font-size: 0;
+  width: 80px;
+  height: 80px;
 }
 
 #place-page .reviews-container .reviews .review .left-review-part .image-container img {
@@ -1184,16 +1182,14 @@ main {
   margin-bottom: 20px;
 }
 
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part {
-  width: 200px;
-}
-
 #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container {
   font-size: 0;
+  height: 100px;
+  width: 100px;
 }
 
 #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container img {
-  border-radius: 3px;
+  border-radius: 50%;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1206,28 +1202,39 @@ main {
   padding-left: 20px;
   display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper {
+  display: -webkit-box;
+  display: flex;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .name {
-  font-weight: 900;
-  margin-right: 10px;
-}
-
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate {
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper .rate {
   font-size: 14px;
 }
 
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate .place-name {
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper .rate .place-name {
   font-weight: 900;
 }
 
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate .place-name::before {
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper .rate .place-name::before {
   content: 'at ';
 }
 
-#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .rate i {
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper .rate i {
   color: #FFBA19;
+}
+
+#profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .top-wrapper .date {
+  color: gray;
+  font-size: 14px;
 }
 
 #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part .text {
@@ -1244,6 +1251,13 @@ main {
   }
   #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part {
     width: 100%;
+  }
+  #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container {
+    width: 100%;
+    height: 150px;
+  }
+  #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .left-review-part .image-container img {
+    border-radius: 0;
   }
   #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review .right-review-part {
     width: 100%;
