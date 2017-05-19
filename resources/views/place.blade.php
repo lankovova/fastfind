@@ -110,7 +110,9 @@
 								<div class="top-wrapper">
 									<div class="left-part">
 										<div class="name">
-											{{ $review->user->name }}
+											<a href="{{ route('userprofile', ['id' => $review->user->id]) }}">
+												{{ $review->user->name }}
+											</a>
 										</div>
 										<div class="rate">
 											{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>

@@ -1034,6 +1034,10 @@ main {
   margin-right: 10px;
 }
 
+#place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part .name a {
+  color: black;
+}
+
 #place-page .reviews-container .reviews .review .right-review-part .top-wrapper .left-part .rate {
   font-size: 14px;
 }
@@ -1179,6 +1183,8 @@ main {
 #profile-page .profile-wrapper .right-layer .reviews-wrapper .reviews .review {
   display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 

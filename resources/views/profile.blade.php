@@ -11,10 +11,12 @@
 			<div class="profile-pic">
 				<img src="../images/users/{{ $user->photo }}" alt="">
 			</div>
-			@if (Auth::user()->id == $user->id)
-				<div class="actions">
-					<a href="/profile/edit">Edit profile</a>
-				</div>
+			@if (Auth::check())
+				@if (Auth::user()->id == $user->id)
+					<div class="actions">
+						<a href="/profile/edit">Edit profile</a>
+					</div>
+				@endif
 			@endif
 		</div>
 		<div class="right-layer">

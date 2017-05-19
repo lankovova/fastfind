@@ -76,6 +76,7 @@
 
 			{{-- Dynamic list end --}}
 
+			{{--
 			<div class="card-container">
 				<div class="card">
 					<div class="card-img">
@@ -339,6 +340,7 @@
 					</div>
 				</div>
 			</div>
+			 --}}
 
 
 		</div>
