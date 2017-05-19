@@ -10,6 +10,7 @@ class ListController extends Controller
 {
     public function index(Request $request)
     {
+        $chosenCategory;
         if ($request->input('c')) {
             $chosenCategory = $request->input('c', 'all');
             $category = Category::where('name', $chosenCategory)->first();
@@ -18,20 +19,26 @@ class ListController extends Controller
             $places = Place::all()->where('published', true);
         }
 
-        return view('list', ['places' => $places]);
+        $categories = Category::all();
+
+        return view('list', ['places' => $places, 'categories' => $categories,'chosenCategory' => $chosenCategory]);
     }
 
     public function filter(Request $request)
     {
         $data = $request->all();
 
-        if ($request->input('c')) {
-            $chosenCategory = $request->input('c', 'all');
+        $chosenCategory;
+
+        if ($data['category'] != 'all') {
+            $chosenCategory = $data['category'];
             $category = Category::where('name', $chosenCategory)->first();
             $places = $category->places;
         } else {
             $places = Place::all();
         }
+
+        $categories = Category::all();
 
         $places = $places->where('published', true);
 
@@ -40,6 +47,6 @@ class ListController extends Controller
         if ($data['price'])
             $places = $places->where('average_price', $data['price']);
 
-        return view('list', ['places' => $places, 'filters' => $data]);
+        return view('list', ['places' => $places, 'filters' => $data, 'categories' => $categories, 'chosenCategory' => $chosenCategory]);
     }
 }

@@ -17,17 +17,28 @@
 						<div class="label">Category</div>
 						<div class="input">
 							<select name="category" class="filter-inputs">
-								<option value="all" selected>All</option>
-								<option value="food">Food</option>
-								<option value="drink">Drink</option>
-								<option value="entertainment">Entertainment</option>
-								<option value="culture">Culture</option>
+								<option value="all">All</option>
+								@foreach ($categories as $category)
+									@if ($chosenCategory == $category->name)
+										<option value="{{ $category->name }}" selected>{{ $category->name }}</option>
+									@else
+										<option value="{{ $category->name }}">{{ $category->name }}</option>
+									@endif
+								@endforeach
 							</select>
 						</div>
 						<div class="label">Rating</div>
-						<input type="number" class="filter-inputs" name="rating" min="1" max="10" value="{{ $filters['rating'] }}" placeholder="Rating">
+						@if (isset($filters['rating']))
+							<input type="number" class="filter-inputs" name="rating" min="1" max="10" value="{{ $filters['rating'] }}" placeholder="Rating">
+						@else
+							<input type="number" class="filter-inputs" name="rating" min="1" max="10" placeholder="Rating">
+						@endif
 						<div class="label">Price</div>
-						<input type="number" class="filter-inputs" name="price" min="1" max="5" value="{{ $filters['price'] }}" placeholder="Price">
+						@if (isset($filters['price']))
+							<input type="number" class="filter-inputs" name="price" min="1" max="5" value="{{ $filters['price'] }}" placeholder="Price">
+						@else
+							<input type="number" class="filter-inputs" name="price" min="1" max="5" placeholder="Price">
+						@endif
 					</div>
 					<input type="submit" id="apply-btn" value="Apply">
 				</form>

@@ -566,6 +566,7 @@ main {
   width: 100%;
   box-sizing: border-box;
   padding: 5px 10px;
+  text-transform: capitalize;
 }
 
 #list-page .filters-block .filters-container .filters-content #apply-btn {
@@ -887,6 +888,7 @@ main {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+  line-height: 20px;
 }
 
 #place-page .place-info-container .place-details {
@@ -903,6 +905,7 @@ main {
   align-items: center;
   font-size: 18px;
   text-align: center;
+  line-height: 24px;
 }
 
 #place-page .place-info-container .place-details > div {
