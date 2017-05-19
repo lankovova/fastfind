@@ -84,7 +84,7 @@
 				<div class="leave-review-container">
 					<div class="heading">Leave Review</div>
 					@if (Auth::check())
-					<form action="/api/leave_review" method="POST">
+					<form action="/api/leaveReview" method="POST">
 						{{ csrf_field() }}
 						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="placeid" value="{{ $place->id }}">

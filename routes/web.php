@@ -11,36 +11,25 @@
 |
 */
 
-// Route::get('/home', function () {
-
-// 	// $category = new Category;
-// 	// $category->name = 'drink';
-// 	// $category->save();
-
-// 	// $categories = Category::all();
-// 	// foreach ($categories as $cat)
-// 	// 	echo $cat->name . " ";
-
-// 	return view('homemy');
-// });
-
+// Authorization routes
 Auth::routes();
 
+// Home route
 Route::get('/', 'HomeController@index')->name('home');
 
+// List route
 Route::get('/list', 'ListController@index')->name('list');
+Route::post('/list', 'ListController@filter')->name('filterList');
 
-Route::post('/api/leave_review', 'ReviewController@index')->name('leaveReview');
+// Leave review route
+Route::post('/api/leaveReview', 'ReviewController@index')->name('leaveReview');
 
+// Place route
 Route::get('/place/{id}', 'PlaceController@index')->name('place');
 
 // User profile routes
 Route::get('/profile', 'UserController@showSelf')->name('selfprofile');
 Route::get('/user/{id}', 'UserController@show')->name('userprofile');
-
-Route::get('/about', function () {
-	return view('about');
-})->name('about');
 
 
 

@@ -532,6 +532,11 @@ main {
 #list-page .filters-block .filters-container .filters-content {
   padding: 10px;
   box-sizing: border-box;
+}
+
+#list-page .filters-block .filters-container .filters-content form {
+  display: -webkit-box;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-flow: column;
@@ -539,9 +544,32 @@ main {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
+  width: 100%;
+}
+
+#list-page .filters-block .filters-container .filters-content .filters {
+  width: 100%;
+}
+
+#list-page .filters-block .filters-container .filters-content .filters .heading {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+#list-page .filters-block .filters-container .filters-content .filters .label {
+  margin-top: 10px;
+  width: 100%;
+  color: #4d4d4d;
+}
+
+#list-page .filters-block .filters-container .filters-content .filters .filter-inputs {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
 }
 
 #list-page .filters-block .filters-container .filters-content #apply-btn {
+  border: none;
   text-align: center;
   text-transform: uppercase;
   width: 250px;

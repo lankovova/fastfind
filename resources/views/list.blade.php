@@ -9,10 +9,28 @@
 		<div class="toggle-filters-btn"><i class="fa fa-chevron-down" aria-hidden="true"></i> Open filters</div>
 		<div class="filters-container">
 			<div class="filters-content flexbox">
-				<div class="filters">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis efficitur justo sit amet volutpat. Vivamus vel mauris luctus velit egestas fringilla sed eget justo. Suspendisse potenti. Suspendisse id velit vitae urna ornare feugiat id quis ante. Praesent tempor eleifend est non blandit. Pellentesque pulvinar iaculis mattis. Donec a odio nisi. Nulla euismod lacinia ligula. Donec eros lacus, ultricies eu porttitor vitae, finibus id quam. Aenean pharetra massa nec condimentum ullamcorper. Aenean faucibus aliquet mi, malesuada pharetra lectus rhoncus at. Curabitur tempor aliquet dui cursus sollicitudin. Pellentesque maximus maximus malesuada. Nunc tincidunt ullamcorper risus et venenatis. Morbi gravida tincidunt nisl vel condimentum. Donec nec dignissim nisi. Fusce vehicula lacinia elit vitae lacinia. In iaculis ante quis sem venenatis aliquam. Donec congue, ante id suscipit placerat, risus magna dictum leo, sed ullamcorper velit risus at lorem. Etiam faucibus consequat libero at tempus. Donec nec magna elit. Proin venenatis, nulla non efficitur venenatis, nunc lectus lacinia dolor, non congue sapien ex sed neque. Vestibulum augue augue, pulvinar eget odio sed, molestie semper nunc. Mauris egestas scelerisque nibh, sit amet facilisis massa efficitur non. Vestibulum luctus leo ullamcorper odio egestas, et sodales enim cursus. Sed consectetur purus vitae purus tincidunt faucibus. Aliquam ullamcorper dolor vitae augue luctus viverra.
-				</div>
-				<div id="apply-btn">Apply</div>
+				<form method="POST">
+					{{-- action="/api/filterList" --}}
+					{{ csrf_field() }}
+					<div class="filters">
+						<div class="heading">Filters</div>
+						<div class="label">Category</div>
+						<div class="input">
+							<select name="category" class="filter-inputs">
+								<option value="all" selected>All</option>
+								<option value="food">Food</option>
+								<option value="drink">Drink</option>
+								<option value="entertainment">Entertainment</option>
+								<option value="culture">Culture</option>
+							</select>
+						</div>
+						<div class="label">Rating</div>
+						<input type="number" class="filter-inputs" name="rating" min="1" max="10" value="{{ $filters['rating'] }}" placeholder="Rating">
+						<div class="label">Price</div>
+						<input type="number" class="filter-inputs" name="price" min="1" max="5" value="{{ $filters['price'] }}" placeholder="Price">
+					</div>
+					<input type="submit" id="apply-btn" value="Apply">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -37,42 +55,44 @@
 
 		<div class="cards flexbox">
 
-
 			{{-- Dynamic list start --}}
-
-			@foreach ($places as $place)
-				<div class="card-container">
-					<div class="card">
-						<div class="card-img">
-							<a href="/place/{{ $place->id }}">
-								<img src="images/places/{{ $place->image }}" alt="">
-							</a>
-						</div>
-						<div class="card-content">
-							<div class="card-title">
-								<a href="/place/porter">{{ $place->name }}</a>
+			@if (!count($places))
+				No such places
+			@else
+				@foreach ($places as $place)
+					<div class="card-container">
+						<div class="card">
+							<div class="card-img">
+								<a href="/place/{{ $place->id }}">
+									<img src="../images/places/{{ $place->image }}" alt="">
+								</a>
 							</div>
-							<div class="card-top-plate flexbox">
-								<div class="price">
-									@for ($i = 0; $i < 5; $i++)
-										@if ($i < $place->average_price)
-											<i class="fa fa-usd filled" aria-hidden="true"></i>
-										@else
-											<i class="fa fa-usd default" aria-hidden="true"></i>
-										@endif
-									@endfor
+							<div class="card-content">
+								<div class="card-title">
+									<a href="/place/porter">{{ $place->name }}</a>
 								</div>
-								<div class="rating">
-									{{ $place->rating }} <i class="fa fa-star" aria-hidden="true"></i>
+								<div class="card-top-plate flexbox">
+									<div class="price">
+										@for ($i = 0; $i < 5; $i++)
+											@if ($i < $place->average_price)
+												<i class="fa fa-usd filled" aria-hidden="true"></i>
+											@else
+												<i class="fa fa-usd default" aria-hidden="true"></i>
+											@endif
+										@endfor
+									</div>
+									<div class="rating">
+										{{ $place->rating }} <i class="fa fa-star" aria-hidden="true"></i>
+									</div>
 								</div>
-							</div>
-							<div class="card-description">
-								{{ $place->description }}
+								<div class="card-description">
+									{{ $place->description }}
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			@endforeach
+				@endforeach
+			@endif
 
 			{{-- Dynamic list end --}}
 

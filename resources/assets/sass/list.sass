@@ -40,10 +40,27 @@
 			.filters-content
 				padding: 10px
 				box-sizing: border-box
-				flex-flow: column
-				justify-content: center
-				align-items: center
+				form
+					display: flex
+					flex-flow: column
+					justify-content: center
+					align-items: center
+					width: 100%
+				.filters
+					width: 100%
+					.heading
+						font-size: 24px
+						margin-bottom: 15px
+					.label
+						margin-top: 10px
+						width: 100%
+						color: lighten(black, 30)
+					.filter-inputs
+						width: 100%
+						box-sizing: border-box
+						padding: 5px 10px
 				#apply-btn
+					border: none;
 					text-align: center
 					text-transform: uppercase
 					width: 250px
