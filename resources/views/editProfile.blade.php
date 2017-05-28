@@ -4,48 +4,63 @@
 
 @section('main')
 
-EDIT PROFILE PAGE
-
-<div id="profile-page">
-	<div class="profile-wrapper">
-		<div class="left-layer">
-			<div class="profile-pic">
-				<img src="../images/users/{{ $user->photo }}" alt="">
+<div id="edit-profile-page">
+	<div class="section-wrapper">
+		<div class="page-heading">Edit profile</div>
+		<div class="user-content">
+			<div class="left-part">
+				<div class="profile-pic">
+					<img src="../images/users/{{ $user->photo }}" alt="">
+				</div>
+				<input type="file" value="Change pic">
 			</div>
-		</div>
-		<div class="right-layer">
-			<div class="detailed-info">
+			<div class="right-part">
+				<div class="heading">Main info</div>
 				<div class="name">
 					<div class="key">Name</div>
-					<div class="value">{{ $user->name }}</div>
-					<div class="subvalue">({{ $user->type }})</div>
+					<input type="text" value="{{ $user->name }}">
 				</div>
 				<div class="email">
 					<div class="key">Email</div>
-					<div class="value">{{ $user->email }}</div>
+					<input type="text" value="{{ $user->email }}">
 				</div>
-					<div class="address">
-						<div class="key">Address</div>
-						<div class="value">{{ $user->address }}</div>
+				<div class="address">
+					<div class="key">Address</div>
+					<input type="text" value="{{ $user->address }}">
+				</div>
+				<div class="telephone">
+					<div class="key">Telephone</div>
+					<input type="text" value="{{ $user->phone }}">
+				</div>
+				<div class="heading">Socials</div>
+				<div class="facebook">
+					<div class="key">
+						<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
 					</div>
-					<div class="telephone">
-						<div class="key">Telephone</div>
-						<div class="value">{{ $user->phone }}</div>
+					<input type="text" value="">
+				</div>
+				<div class="twitter">
+					<div class="key">
+						<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
 					</div>
-					<div class="socials">
-						<div class="key">Socials</div>
-						<div class="links">
-							<div class="facebook"><a href="{{ $user->facebook }}"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></div>
-
-							<div class="twitter"><a href="{{ $user->twitter }}"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></div>
-
-							<div class="google"><a href="{{ $user->googleplus }}"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></div>
-
-							<div class="vk"><a href="{{ $user->vk }}"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a></div>
-						</div>
+					<input type="text" value="">
+				</div>
+				<div class="google">
+					<div class="key">
+						<i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
 					</div>
+					<input type="text" value="">
+				</div>
+				<div class="vk">
+					<div class="key">
+						<i class="fa fa-vk fa-2x" aria-hidden="true"></i>
+					</div>
+					<input type="text" value="">
+				</div>
+				<div class="apply-btn-wrapper">
+					<input type="submit" value="Apply changes">
+				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
