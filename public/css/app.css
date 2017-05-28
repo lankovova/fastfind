@@ -426,12 +426,17 @@ main {
 
 #edit-profile-page .section-wrapper .right-part {
   width: 70%;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 #edit-profile-page .section-wrapper .right-part .heading {
   font-size: 22px;
   font-weight: 900;
+  margin: 20px 0;
+}
+
+#edit-profile-page .section-wrapper .right-part .heading:first-child {
+  margin-top: 0;
 }
 
 #edit-profile-page .section-wrapper .right-part > div {
