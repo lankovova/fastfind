@@ -29,6 +29,7 @@ Route::get('/place/{id}', 'PlaceController@index')->name('place');
 
 // User profile routes
 Route::get('/profile', 'UserController@showSelf')->name('selfprofile');
+Route::get('/profile/edit', 'UserController@edit')->name('editprofile');
 Route::get('/user/{id}', 'UserController@show')->name('userprofile');
 
 

@@ -84,6 +84,11 @@
 				<div class="leave-review-container">
 					<div class="heading">Leave Review</div>
 					@if (Auth::check())
+					@if (Auth::user()->address))
+						<div id="user-home-address" style="display: none">
+							{{ Auth::user()->address }}
+						</div>
+					@endif
 					<form action="/api/leaveReview" method="POST">
 						{{ csrf_field() }}
 						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
@@ -167,14 +172,42 @@
 	});
 
 	function initMap(uluru) {
+		var directionsService = new google.maps.DirectionsService;
+		var directionsDisplay = new google.maps.DirectionsRenderer;
+
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 17,
 			center: uluru,
 			scrollwheel: false
 		});
-		var marker = new google.maps.Marker({
-			position: uluru,
-			map: map
+
+		var userAddressElem = $('#user-home-address');
+
+		if (!userAddressElem.length) {
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map
+			});
+		} else {
+			var placeAddress = $('#place_address_for_map').text();
+			var userAddress = userAddressElem.text();
+			directionsDisplay.setMap(map);
+			calculateAndDisplayRoute(directionsService, directionsDisplay, userAddress, placeAddress);
+		}
+	}
+
+	function calculateAndDisplayRoute(directionsService, directionsDisplay, userAddress, placeAdrress) {
+		directionsService.route({
+			origin: userAddress,
+			destination: placeAddress,
+			travelMode: 'TRANSIT'
+			//transitOptions: { routingPreference: 'FEWER_TRANSFERS' },
+		}, function(response, status) {
+			if (status === 'OK') {
+				directionsDisplay.setDirections(response);
+			} else {
+				window.alert('Can\'t build route, please check your address');
+			}
 		});
 	}
 </script>

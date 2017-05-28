@@ -32,6 +32,20 @@ class UserController extends Controller
         }
     }
 
+    public function edit()
+    {
+        if (Auth::check()) {
+            // Get this user reviews
+            $reviews = User::findOrFail(Auth::user()->id)->reviews()->orderBy('date', 'desc')->get();
+            // Get user instance with Auth facade and pass it to view
+            $user = Auth::user();
+            return view('editProfile', ['user' => $user, 'reviews' => $reviews]);
+        }
+        else {
+            return redirect()->route('login');
+        }
+    }
+
     public function show($id)
     {
         try {
