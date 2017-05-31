@@ -35,6 +35,7 @@ class ListController extends Controller
             $category = Category::where('name', $chosenCategory)->first();
             $places = $category->places;
         } else {
+            $chosenCategory = 'all';
             $places = Place::all();
         }
 
