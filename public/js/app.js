@@ -5,6 +5,7 @@
 		$('#header-search-form #header-search-field').keyup(function(e) {
 			searchHandler($(this).val());
 		});
+
 		$('#header-search-form #header-search-field').click(function() {
 			prevSearchText = undefined;
 			searchHandler($(this).val());
@@ -41,7 +42,6 @@
 		var searchResults = $('#search-results');
 
 		var resultsHtml = '';
-
 		if (placesData !== '') {
 			$.each( JSON.parse(placesData), function( key, value ) {
 				resultsHtml += '<div class="search-result"><a href="/place/' + value.id + '">' + value.name + '</div>';
