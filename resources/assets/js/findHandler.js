@@ -1,11 +1,12 @@
 (function(){
+	var prevSearchText;
+
 	$(function(){
 		$('#header-search-form #header-search-field').keyup(function(e) {
-			if (e.keyCode !== 27) {
-				searchHandler($(this).val());
-			}
+			searchHandler($(this).val());
 		});
 		$('#header-search-form #header-search-field').click(function() {
+			prevSearchText = undefined;
 			searchHandler($(this).val());
 		});
 
@@ -17,15 +18,16 @@
 	});
 
 	function searchHandler(input) {
-		// TODO: Add delay to user input
-		if (input === '')
+		if (input === '') {
 			clearSearchResults();
-		else
-			searchPlace(input);
+		} else if (input !== prevSearchText) {
+			getMatchablesPlaces(input);
+		}
+		prevSearchText = input;
 	}
 
-	function searchPlace(placeName) {
-		// Send request to api
+	function getMatchablesPlaces(placeName) {
+		// Get matchable places from server api
 		$.get("/api/search", { searchText: placeName } )
 			.done(function(data) {
 				outputSearchResults(data);
@@ -46,9 +48,11 @@
 			});
 		}
 		else {
+			// Zero results case
 			resultsHtml += '<div class="search-result-zero">No such places</div>';
 		}
 
+		// Put results into html
 		searchResults.html(resultsHtml);
 	}
 
