@@ -27,6 +27,12 @@
 				</a>
 			</div>
 			<div class="links flexbox">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				<form id="header-search-form" action="">
+					{{ csrf_field() }}
+					<input type="text" id="header-search-field" placeholder="Search" value="">
+					<div id="search-results"></div>
+				</form>
 				<a href="#" class="link">About</a>
 				@if (Auth::guest())
 					<a href="{{ route('login') }}" class="link">Login</a>

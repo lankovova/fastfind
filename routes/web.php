@@ -24,6 +24,9 @@ Route::post('/list', 'ListController@filter')->name('filterList');
 // Leave review route
 Route::post('/api/leaveReview', 'ReviewController@index')->name('leaveReview');
 
+// Search route
+Route::get('/api/search', 'SearchController@index')->name('search');
+
 // Place route
 Route::get('/place/{id}', 'PlaceController@index')->name('place');
 
