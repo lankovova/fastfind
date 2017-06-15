@@ -1,3 +1,95 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+nav ul {
+  list-style: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+#not-found {
+  margin: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  font-family: Roboto;
+}
+
+#not-found .heading {
+  font-size: 120px;
+  font-weight: 900;
+}
+
+#not-found .info-text {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+#not-found .home-link {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#not-found .home-link i {
+  margin-right: 5px;
+}
+
+#not-found .home-link a {
+  border-bottom: 1px solid lightgray;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+  color: black;
+}
+
+#not-found .home-link a:hover {
+  color: #e5a000;
+}
+
 #entrance-page {
   position: relative;
   height: 100%;

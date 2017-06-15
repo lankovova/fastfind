@@ -18,7 +18,6 @@ class SearchController extends Controller
 					->take(10)
 					->get();
 
-
 		if (count($places) == 0) return;
 
 		$i = 0;
