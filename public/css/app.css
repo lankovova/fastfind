@@ -1370,6 +1370,104 @@ main {
   text-align: justify;
 }
 
+#place-editor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#place-editor .message {
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#place-editor .message .small {
+  font-size: 14px;
+  color: #f9f9f9;
+}
+
+#place-editor .done {
+  background: #00bd00;
+}
+
+#place-editor .error {
+  background: #ff3333;
+}
+
+#place-editor .main-heading {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+#place-editor .place-info-block form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+#place-editor .place-info-block form .label {
+  padding: 0 5px;
+  margin-bottom: 5px;
+}
+
+#place-editor .place-info-block form input[type="text"] {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#place-editor .place-info-block form input[type="text"]:focus {
+  outline: 1px solid gold;
+}
+
+#place-editor .place-info-block form select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border-color: lightgrey;
+  text-transform: capitalize;
+}
+
+#place-editor .place-info-block form select:focus {
+  border: 1px solid gold;
+  outline: none;
+}
+
+#place-editor .place-info-block form input[type="file"] {
+  margin-bottom: 10px;
+}
+
+#place-editor .place-info-block form input[type="submit"] {
+  text-transform: uppercase;
+  border: none;
+  background: gold;
+  max-width: 200px;
+  width: 100%;
+  padding: 10px 0;
+  align-self: flex-end;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+#place-editor .place-info-block form input[type="submit"]:hover {
+  background: black;
+  color: white;
+}
+
 #profile-page .profile-wrapper {
   max-width: 1000px;
   margin: 0 auto;

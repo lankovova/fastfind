@@ -1,0 +1,68 @@
+@import "variables"
+
+#place-editor
+	max-width: 1000px
+	margin: 0 auto
+	padding: 20px
+	box-sizing: border-box
+	.message
+		border-radius: 10px
+		width: 100%
+		padding: 15px 20px
+		box-sizing: border-box
+		color: white
+		text-align: center
+		margin-bottom: 10px
+		cursor: pointer
+		font-size: 20px
+		.small
+			font-size: 14px
+			color: lighten(lightgray, 15)
+	.done
+		background: lighten(green, 12)
+	.error
+		background: lighten(red, 10)
+
+	.main-heading
+		font-size: 26px
+		margin-bottom: 20px
+	.place-info-block
+		form
+			display: flex
+			flex-direction: column
+			.label
+				padding: 0 5px
+				margin-bottom: 5px
+			input[type="text"]
+				width: 100%
+				border-radius: 3px
+				border: 1px solid lightgrey
+				margin-bottom: 10px
+				padding: 10px
+				box-sizing: border-box
+				&:focus
+					outline: 1px solid gold
+			select
+				padding: 10px
+				margin-bottom: 10px
+				border-radius: 3px
+				border-color: lightgrey
+				text-transform: capitalize
+				&:focus
+					border: 1px solid gold
+					outline: none
+			input[type="file"]
+				margin-bottom: 10px
+			input[type="submit"]
+				text-transform: uppercase
+				border: none
+				background: gold
+				max-width: 200px
+				width: 100%
+				padding: 10px 0
+				align-self: flex-end
+				cursor: pointer
+				transition: all 300ms ease
+				&:hover
+					background: black
+					color: white

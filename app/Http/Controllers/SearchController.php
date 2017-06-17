@@ -15,7 +15,7 @@ class SearchController extends Controller
 		$places = Place::where("published", 1)
 						->where("name", "like", "%$searchText%")
 						->orderBy("name", "desc")
-						->take(10)
+						->take(5)
 						->get();
 
 		if (count($places) == 0) return;
