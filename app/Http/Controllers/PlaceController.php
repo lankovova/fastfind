@@ -50,7 +50,6 @@ class PlaceController extends Controller
             $place->address = $input["address"];
             $place->work_hours = $input["workHours"];
             $place->image = basename( $_FILES["fileToUpload"]["name"]);
-            // $place->website = !empty($input["website"]) ? $input["website"] : '';
             $place->website = $input["website"];
             $place->published = (Auth::user()->type == "admin") ? 1 : 0;
 
@@ -78,10 +77,10 @@ class PlaceController extends Controller
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                // echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
+                // echo "File is not an image.";
                 $uploadOk = 0;
             }
         }
@@ -92,9 +91,9 @@ class PlaceController extends Controller
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+                // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                // echo "Sorry, there was an error uploading your file.";
             }
         }
     }
