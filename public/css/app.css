@@ -614,6 +614,10 @@ main {
 
 #edit-profile-page .section-wrapper .right-part > div .key {
   width: 100px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
 }
 
 #edit-profile-page .section-wrapper .right-part > div input {

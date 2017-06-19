@@ -37,7 +37,8 @@ Route::post('/placeeditor/{id}', 'PlaceController@editPlace')->name('editPlace')
 
 // User profile routes
 Route::get('/profile', 'UserController@showSelf')->name('selfprofile');
-Route::get('/profile/edit', 'UserController@edit')->name('editprofile');
+Route::get('/profile/edit', 'UserController@showEdit')->name('showEditPage');
+Route::post('/api/editProfile', 'UserController@edit')->name('editprofile');
 Route::get('/user/{id}', 'UserController@show')->name('userprofile');
 
 Route::post('/api/banUser', 'UserController@ban')->name('banuser');

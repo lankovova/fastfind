@@ -17,7 +17,7 @@
 						<a href="/profile/edit">Edit profile</a>
 					</div>
 				@endif
-				@if (Auth::user()->type == "admin")
+				@if (Auth::user()->type == "admin" && Auth::user()->id != $user->id)
 					@if ($user->type == "banned")
 						<form action="/api/unbanUser" method="post" class="ban-user">
 							{{ csrf_field() }}
