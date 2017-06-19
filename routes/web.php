@@ -29,7 +29,9 @@ Route::get('/api/search', 'SearchController@index')->name('search');
 
 // Place route
 Route::get('/place/{id}', 'PlaceController@index')->name('place');
-Route::get('/placeeditor', 'PlaceController@showEditor')->name('placeeditor');
+Route::get('/placeeditor', 'PlaceController@showEditor')->name('placecreator');
+Route::get('/placeeditor/{id}', 'PlaceController@showEditorForPlace')->name('placeeditor');
+Route::post('/placeeditor/{id}', 'PlaceController@editPlace')->name('editPlace');
 Route::post('/placeeditor', 'PlaceController@createPlace')->name('createPlace');
 
 // User profile routes

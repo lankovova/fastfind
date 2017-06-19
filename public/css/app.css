@@ -1170,7 +1170,10 @@ main {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
   line-height: 20px;
+  width: 100%;
 }
 
 #place-page .place-info-container .place-details {
@@ -1420,7 +1423,7 @@ main {
   margin-bottom: 5px;
 }
 
-#place-editor .place-info-block form input[type="text"] {
+#place-editor .place-info-block form input[type="text"], #place-editor .place-info-block form input[type="number"] {
   width: 100%;
   border-radius: 3px;
   border: 1px solid lightgrey;
@@ -1429,7 +1432,7 @@ main {
   box-sizing: border-box;
 }
 
-#place-editor .place-info-block form input[type="text"]:focus {
+#place-editor .place-info-block form input[type="text"]:focus, #place-editor .place-info-block form input[type="number"]:focus {
   outline: 1px solid gold;
 }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use App\Place;
+use DB;
 use App\Category;
 
 class PlaceController extends Controller
@@ -18,20 +19,84 @@ class PlaceController extends Controller
 
             return view('place', ['place' => $place, 'placeTags' => $placeTags, 'placeReviews' => $placeReviews]);
         } catch (ModelNotFoundException $e) {
-            // Return 404 page
-            return 'There isn\'t such place';
+            abort(404);
         }
     }
 
     public function showEditor() {
+        if (!Auth::check())
+            return redirect()->route('login');
+
         $categories = Category::all();
 
         return view('placeeditor', ['categories' => $categories]);
     }
 
+    public function showEditorForPlace($id) {
+        if (!Auth::check() || Auth::user()->type != "admin")
+            abort(404);
+
+        try {
+            $place = Place::findOrFail($id);
+            $placeTags = $place->placeTags;
+            $categories = Category::all();
+            return view('placeeditor', ['categories' => $categories, 'place' => $place, 'placeTags' => $placeTags]);
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
+    }
+
+    public function editPlace($id, Request $request) {
+        if (!Auth::check() || Auth::user()->type != "admin")
+            abort(404);
+
+        $categories = Category::all();
+
+        $input = $request->all();
+
+        $categoryId;
+        foreach ($categories as $cat) {
+            if ($cat->name == $input['category'])
+                $categoryId = $cat->id;
+        }
+
+        if (empty(basename($_FILES["fileToUpload"]["name"]))) {
+            DB::table('places')
+                ->where('id', $id)
+                ->update([
+                        'name' => $input['name'],
+                        'average_price' => $input['averagePrice'],
+                        'phone' => $input['phone'],
+                        'work_hours' => $input['workHours'],
+                        'address' => $input['address'],
+                        'website' => $input['website'],
+                        'description' => $input['description'],
+                        'category_id' => $categoryId
+                        ]);
+        } else {
+            DB::table('places')
+                ->where('id', $id)
+                ->update([
+                        'name' => $input['name'],
+                        'average_price' => $input['averagePrice'],
+                        'phone' => $input['phone'],
+                        'work_hours' => $input['workHours'],
+                        'address' => $input['address'],
+                        'website' => $input['website'],
+                        'description' => $input['description'],
+                        'image' => basename($_FILES["fileToUpload"]["name"]),
+                        'category_id' => $categoryId
+                        ]);
+
+            self::uploadPlaceImage();
+        }
+
+        return redirect()->route('placeeditor', $id);
+    }
+
     public function createPlace(Request $request) {
         if (!Auth::check())
-            return redirect()->route('login');
+            abort(404);
 
         $categories = Category::all();
 
@@ -59,7 +124,6 @@ class PlaceController extends Controller
 
         } catch (Exception $e) {
             $response = ['status' => 'error', 'text' => 'Something went wrong. Please check your input data'];
-            // TODO: If error pass place data to template
             return view('placeeditor', ['categories' => $categories, 'response' => $response]);
         }
 

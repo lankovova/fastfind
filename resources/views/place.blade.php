@@ -11,7 +11,11 @@
 			</div>
 			<div class="text-wrapper">
 				<div class="text-container">
-					<div class="place-name">{{ $place->name }}</div>
+					<div class="place-name">{{ $place->name }}
+					@if (Auth::user()->type == 'admin')
+						<a href="/placeeditor/{{ $place->id }}" style="color: red; font-size: 20px"><i class="fa fa-cogs" aria-hidden="true"></i> Edit</a>
+					@endif
+					</div>
 					<div class="tags">
 						@foreach ($placeTags as $pt)
 							<div class="tag">{{ $pt->tag->name }}</div>
@@ -38,7 +42,7 @@
 		<div class="row">
 			<div class="place-info-container">
 				<div class="place-description">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					{{ $place->description }}
 				</div>
 				<div class="place-details">
 					@if ($place->work_hours)
@@ -76,6 +80,21 @@
 
 	<section>
 		<div id="map"></div>
+		@if (Auth::check())
+			@if (Auth::user()->address)
+				<div id="user-home-address" style="display: none">
+					{{ Auth::user()->address }}
+				</div>
+			@else
+				<div class="row" style="padding: 10px 20px 0 20px; box-sizing: border-box; text-align: end">
+					Plase set address in your profile to view route to place
+				</div>
+			@endif
+		@else
+			<div class="row" style="padding: 10px 20px 0 20px; box-sizing: border-box; text-align: end">
+				Please <a href="/login">login</a> to view route to place
+			</div>
+		@endif
 	</section>
 
 	<section>
@@ -83,12 +102,13 @@
 			<div class="reviews-container">
 				<div class="leave-review-container">
 					<div class="heading">Leave Review</div>
+
 					@if (Auth::check())
-					@if (Auth::user()->address))
-						<div id="user-home-address" style="display: none">
-							{{ Auth::user()->address }}
-						</div>
-					@endif
+						@if (Auth::user()->address))
+							<div id="user-home-address" style="display: none">
+								{{ Auth::user()->address }}
+							</div>
+						@endif
 					<form action="/api/leaveReview" method="POST">
 						{{ csrf_field() }}
 						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">

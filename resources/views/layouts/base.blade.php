@@ -33,7 +33,6 @@
 					<input type="text" id="header-search-field" placeholder="Search" value="">
 					<div id="search-results"></div>
 				</form>
-				<a href="#" class="link">About</a>
 				@if (Auth::guest())
 					<a href="{{ route('login') }}" class="link">Login</a>
 				@else
@@ -50,7 +49,6 @@
 				</div>
 				<div class="dropdown">
 					<div class="mob-links flexbox flex-col">
-						<a href="#" class="mob-link">About</a>
 						@if (Auth::guest())
 							<a href="{{ route('login') }}" class="mob-link">Login</a>
 						@else
