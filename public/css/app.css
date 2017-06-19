@@ -1373,6 +1373,31 @@ main {
   text-align: justify;
 }
 
+#place-page .reviews-container .reviews .review .right-review-part form {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 10px;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part form i {
+  margin-right: 5px;
+  color: #ff6666;
+  font-size: 14px;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part form input[type="submit"] {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #ff6666;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#place-page .reviews-container .reviews .review .right-review-part form input[type="submit"]:hover {
+  color: red;
+}
+
 #place-editor {
   max-width: 1000px;
   margin: 0 auto;
@@ -1405,9 +1430,23 @@ main {
   background: #ff3333;
 }
 
-#place-editor .main-heading {
-  font-size: 26px;
+#place-editor .top-bar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
   margin-bottom: 20px;
+}
+
+#place-editor .top-bar .main-heading {
+  font-size: 26px;
+}
+
+#place-editor .top-bar a {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+  align-items: flex-end;
 }
 
 #place-editor .place-info-block form {

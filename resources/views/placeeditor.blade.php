@@ -1,6 +1,10 @@
 @extends('layouts.base')
 
-@section('title', 'FF - Place Editor')
+@if (isset($place))
+	@section('title', 'FF - Place Editor')
+@else
+	@section('title', 'FF - Place Creator')
+@endif
 
 @section('main')
 	<div id="place-editor">
@@ -9,7 +13,18 @@
 				{{ $response['text'] }} <span class="small">Click to close</span>
 			</div>
 		@endif
-		<div class="main-heading">Place Editor</div>
+		<div class="top-bar">
+			<div class="main-heading">
+				@if (isset($place))
+					Place Editor
+				@else
+					Place Creator
+				@endif
+			</div>
+			@if (isset($place))
+				<a href="/place/{{ $place->id }}">Back to place</a>
+			@endif
+		</div>
 		<div class="place-info-block">
 			<form action="" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}

@@ -128,7 +128,7 @@
 						<div class="review">
 							<div class="left-review-part">
 								<div class="image-container">
-									<img src="../images/users/{{ $review->user->photo }}" alt="">
+									<img src="../images/users/{{ $review->user->photo }}" alt="user image">
 								</div>
 							</div>
 							<div class="right-review-part">
@@ -150,6 +150,14 @@
 								<div class="text">
 									{{ $review->text }}
 								</div>
+								@if (Auth::user()->type == 'admin')
+									<form action="/api/deleteReview" method="post">
+										{{ csrf_field() }}
+										<input type="hidden" name="reviewId" value="{{$review->id}}">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+										<input type="submit" class="delete-btn" value="Delete review">
+									</form>
+								@endif
 							</div>
 						</div>
 					@endforeach

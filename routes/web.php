@@ -22,7 +22,8 @@ Route::get('/list', 'ListController@index')->name('list');
 Route::post('/list', 'ListController@filter')->name('filterList');
 
 // Leave review route
-Route::post('/api/leaveReview', 'ReviewController@index')->name('leaveReview');
+Route::post('/api/leaveReview', 'ReviewController@create')->name('leaveReview');
+Route::post('/api/deleteReview', 'ReviewController@delete')->name('deleteReview');
 
 // Search route
 Route::get('/api/search', 'SearchController@index')->name('search');

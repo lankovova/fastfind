@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use DB;
 
 class ReviewController extends Controller
 {
-    public function index(Request $request)
+    public function create(Request $request)
     {
         // Get post data
         $placeid = $request->input('placeid');
@@ -25,5 +26,14 @@ class ReviewController extends Controller
         $newReview->save();
 
         return redirect()->route('place', ['id' => $placeid]);
+    }
+
+    public function delete(Request $request) {
+        $input = $request->all();
+        $rid = $input['reviewId'];
+
+        DB::table('reviews')->where('id', '=', $rid)->delete();
+
+        return redirect()->back();
     }
 }
