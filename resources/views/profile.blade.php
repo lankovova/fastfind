@@ -17,6 +17,23 @@
 						<a href="/profile/edit">Edit profile</a>
 					</div>
 				@endif
+				@if (Auth::user()->type == "admin")
+					@if ($user->type == "banned")
+						<form action="/api/unbanUser" method="post" class="ban-user">
+							{{ csrf_field() }}
+							<input type="hidden" name="userId" value="{{ $user->id }}">
+							<i class="fa fa-ban" aria-hidden="true"></i>
+							<input type="submit" value="Unban">
+						</form>
+					@else
+						<form action="/api/banUser" method="post" class="ban-user">
+							{{ csrf_field() }}
+							<input type="hidden" name="userId" value="{{ $user->id }}">
+							<i class="fa fa-ban" aria-hidden="true"></i>
+							<input type="submit" value="Ban">
+						</form>
+					@endif
+				@endif
 			@endif
 		</div>
 		<div class="right-layer">

@@ -1555,6 +1555,19 @@ main {
   width: 100%;
 }
 
+#profile-page .profile-wrapper .left-layer .ban-user {
+  color: red;
+}
+
+#profile-page .profile-wrapper .left-layer .ban-user input[type="submit"] {
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
 #profile-page .profile-wrapper .right-layer {
   -webkit-box-flex: 3;
   flex: 3;

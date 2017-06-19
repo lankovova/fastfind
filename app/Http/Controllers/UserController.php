@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -49,6 +50,27 @@ class UserController extends Controller
             // Return 404 page
             return 'There isn\'t such place';
         }
+    }
 
+    public function ban(Request $request)
+    {
+        $input = $request->all();
+
+        DB::table('users')
+            ->where('id', $input['userId'])
+            ->update(['type' => 'banned']);
+
+        return redirect()->back();
+    }
+
+    public function unban(Request $request)
+    {
+        $input = $request->all();
+
+        DB::table('users')
+            ->where('id', $input['userId'])
+            ->update(['type' => 'user']);
+
+        return redirect()->back();
     }
 }
