@@ -109,14 +109,18 @@
 								{{ Auth::user()->address }}
 							</div>
 						@endif
-					<form action="/api/leaveReview" method="POST">
-						{{ csrf_field() }}
-						<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
-						<input type="hidden" name="placeid" value="{{ $place->id }}">
-						<textarea name="leave-review-area" placeholder="Review text here" id="leave-review-area" rows="5" required></textarea>
-						<input type="number" placeholder="Rate this place [1-10]" id="rating-review" name="rating" min="1" max="10" required>
-						<input type="submit" value="Add Review">
-					</form>
+						@if (Auth::user()->type == "banned")
+							Banned users can't leave reviews
+						@else
+							<form action="/api/leaveReview" method="POST">
+								{{ csrf_field() }}
+								<input type="hidden" name="userid" value="{{ Auth::user()->id }}">
+								<input type="hidden" name="placeid" value="{{ $place->id }}">
+								<textarea name="leave-review-area" placeholder="Review text here" id="leave-review-area" rows="5" required></textarea>
+								<input type="number" placeholder="Rate this place [1-10]" id="rating-review" name="rating" min="1" max="10" required>
+								<input type="submit" value="Add Review">
+							</form>
+						@endif
 					@else
 						To leave review please <a href="{{ route('login') }}">login</a>
 					@endif
@@ -125,41 +129,43 @@
 					<div class="heading">All Reviews ({{ count($placeReviews) }})</div>
 
 					@foreach ($placeReviews as $review)
-						<div class="review">
-							<div class="left-review-part">
-								<div class="image-container">
-									<img src="../images/users/{{ $review->user->photo }}" alt="user image">
-								</div>
-							</div>
-							<div class="right-review-part">
-								<div class="top-wrapper">
-									<div class="left-part">
-										<div class="name">
-											<a href="{{ route('userprofile', ['id' => $review->user->id]) }}">
-												{{ $review->user->name }}
-											</a>
-										</div>
-										<div class="rate">
-											{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
-										</div>
-									</div>
-									<div class="date">
-										{{ $review->date }}
+						@if ($review->user->type != 'banned')
+							<div class="review">
+								<div class="left-review-part">
+									<div class="image-container">
+										<img src="../images/users/{{ $review->user->photo }}" alt="user image">
 									</div>
 								</div>
-								<div class="text">
-									{{ $review->text }}
+								<div class="right-review-part">
+									<div class="top-wrapper">
+										<div class="left-part">
+											<div class="name">
+												<a href="{{ route('userprofile', ['id' => $review->user->id]) }}">
+													{{ $review->user->name }}
+												</a>
+											</div>
+											<div class="rate">
+												{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+										</div>
+										<div class="date">
+											{{ $review->date }}
+										</div>
+									</div>
+									<div class="text">
+										{{ $review->text }}
+									</div>
+									@if (Auth::user()->type == 'admin')
+										<form action="/api/deleteReview" method="post">
+											{{ csrf_field() }}
+											<input type="hidden" name="reviewId" value="{{$review->id}}">
+											<i class="fa fa-trash-o" aria-hidden="true"></i>
+											<input type="submit" class="delete-btn" value="Delete review">
+										</form>
+									@endif
 								</div>
-								@if (Auth::user()->type == 'admin')
-									<form action="/api/deleteReview" method="post">
-										{{ csrf_field() }}
-										<input type="hidden" name="reviewId" value="{{$review->id}}">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-										<input type="submit" class="delete-btn" value="Delete review">
-									</form>
-								@endif
 							</div>
-						</div>
+						@endif
 					@endforeach
 
 				</div>
