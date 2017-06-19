@@ -104,7 +104,7 @@
 					<div class="heading">Leave Review</div>
 
 					@if (Auth::check())
-						@if (Auth::user()->address))
+						@if (Auth::user()->address)
 							<div id="user-home-address" style="display: none">
 								{{ Auth::user()->address }}
 							</div>
@@ -230,7 +230,7 @@
 		}
 	}
 
-	function calculateAndDisplayRoute(directionsService, directionsDisplay, userAddress, placeAdrress) {
+	function calculateAndDisplayRoute(directionsService, directionsDisplay, userAddress, placeAddress) {
 		directionsService.route({
 			origin: userAddress,
 			destination: placeAddress,
