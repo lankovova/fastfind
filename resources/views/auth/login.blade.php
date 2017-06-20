@@ -21,6 +21,11 @@
 						<div class="inputs-container flexbox flex-col">
 							<input id="email" type="email" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
 							<input id="password" type="password" placeholder="Password" name="password" required>
+							@if ($errors->has('email'))
+								<span class="help-block" style="color: red">
+									<strong>{{ $errors->first('email') }}</strong>
+								</span>
+							@endif
 						</div>
 						<input type="submit" name="submit" value="Log In">
 					</form>

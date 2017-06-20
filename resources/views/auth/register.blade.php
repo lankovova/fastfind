@@ -19,9 +19,24 @@
 						{{ csrf_field() }}
 						<div class="inputs-container flexbox flex-col">
 							<input id="name" type="text" name="name" placeholder="Name" value="{{ old('name') }}" required autofocus>
+							@if ($errors->has('name'))
+								<span class="help-block" style="color: red">
+									<strong>{{ $errors->first('name') }}</strong>
+								</span>
+							@endif
 							<input id="email" type="email" placeholder="Email" name="email" value="{{ old('email') }}" required>
+							@if ($errors->has('email'))
+								<span class="help-block" style="color: red; margin-bottom: 5px">
+									<strong>{{ $errors->first('email') }}</strong>
+								</span>
+							@endif
 							<input id="password" type="password" placeholder="Password" name="password" required>
 							<input id="password-confirm" type="password" placeholder="Repeat password" name="password_confirmation" required>
+							@if ($errors->has('password'))
+								<span class="help-block" style="color: red">
+									<strong>{{ $errors->first('password') }}</strong>
+								</span>
+							@endif
 						</div>
 						<input type="submit" name="submit" value="Sign Up">
 					</form>
