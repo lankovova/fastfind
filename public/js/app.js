@@ -142,7 +142,8 @@ $(function(){
 	$('.cards-map-container').scroll(function(e) {
 		if (therIsMorePlaces && !reqInProgress) {
 			if ($('#cards-end-marker').offset().top - $(window).height() === 0) {
-				console.log('Load more places');
+				reqInProgress = true;
+				$('#cards-preloader').css({display: 'flex'});
 
 				var filtersData = $('#filters-form').serialize();
 				var orderBy = $('#orderBy').val();
@@ -172,10 +173,7 @@ $(function(){
 							pageNumber++;
 						}, 1000);
 					});
-
-					reqInProgress = true;
-					$('#cards-preloader').css({display: 'flex'});
-				}
+			}
 		}
 	});
 
