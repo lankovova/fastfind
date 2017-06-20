@@ -9,9 +9,8 @@
 		<div class="toggle-filters-btn"><i class="fa fa-chevron-down" aria-hidden="true"></i> Open filters</div>
 		<div class="filters-container">
 			<div class="filters-content flexbox">
-				<form method="POST">
-					{{-- action="/api/filterList" --}}
-					{{ csrf_field() }}
+				<form id="filters-form" method="GET">
+					{{-- {{ csrf_field() }} --}}
 					<div class="filters">
 						<div class="heading">Filters</div>
 						<div class="label">Category</div>
@@ -19,7 +18,7 @@
 							<select name="category" class="filter-inputs">
 								<option value="all">All</option>
 								@foreach ($categories as $category)
-									@if ($chosenCategory == $category->name)
+									@if ($category->name == $filters['category'])
 										<option value="{{ $category->name }}" selected>{{ $category->name }}</option>
 									@else
 										<option value="{{ $category->name }}">{{ $category->name }}</option>
@@ -52,13 +51,13 @@
 				<div class="heading">
 					Order by
 				</div>
-				<div class="orderby">
+				<div class="orderby" id="order-by-name">
 					Name <i class="fa fa-chevron-down" aria-hidden="true"></i>
 				</div>
-				<div class="orderby">
+				<div class="orderby" id="order-by-rating">
 					Rating <i class="fa fa-chevron-down" aria-hidden="true"></i>
 				</div>
-				<div class="orderby">
+				<div class="orderby" id="order-by-price">
 					Price <i class="fa fa-chevron-down" aria-hidden="true"></i>
 				</div>
 			</div>

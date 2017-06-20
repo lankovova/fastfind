@@ -24,7 +24,7 @@
 
 					@foreach ($categories as $category)
 						<div class="type-container">
-							<a href="{{ route('list', ['c' => $category->name]) }}">
+							<a href="{{ route('list', ['category' => $category->name]) }}">
 								<div class="type"><i class="fa fa-{{ $icons[$loop->index] }}"></i> {{ $category->name }}</div>
 							</a>
 						</div>

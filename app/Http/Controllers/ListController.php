@@ -8,46 +8,44 @@ use App\Place;
 
 class ListController extends Controller
 {
-    public function index(Request $request)
-    {
-        $chosenCategory;
-        if ($request->input('c')) {
-            $chosenCategory = $request->input('c', 'all');
-            $category = Category::where('name', $chosenCategory)->first();
-            $places = $category->places()->where('published', true)->orderBy('name', 'ASC')->get();
-        } else {
-            $places = Place::where('published', true)->orderBy('name', 'ASC')->get();
-        }
+	public function index(Request $request)
+	{
+		$input = $request->all();
 
-        $categories = Category::all();
+		// Get filters data
+		$filters = [];
+		$filters['category'] = isset($input['category']) ? $input['category'] : "";
+		$filters['price'] = isset($input['price']) ? $input['price'] : "";
+		$filters['rating'] = isset($input['rating']) ? $input['rating'] : "";
 
-        return view('list', ['places' => $places, 'categories' => $categories,'chosenCategory' => $chosenCategory]);
-    }
+		$categories = Category::all();
 
-    public function filter(Request $request)
-    {
-        $data = $request->all();
+		// Get chosen category id
+		$categoryID;
+		foreach ($categories as $category)
+			if ($category['name'] == $filters['category'])
+				$categoryID = $category['id'];
 
-        $chosenCategory;
+		if (empty($categoryID)) {
+			// If category is set to 'all' then select all places
+			$places = Place::where('published', true);
+		}
+		else {
+			// Get places only for chosen category
+			$category = Category::where('id', $categoryID)->first();
+			$places = $category->places()->where('published', true);
+		}
 
-        if ($data['category'] != 'all') {
-            $chosenCategory = $data['category'];
-            $category = Category::where('name', $chosenCategory)->first();
-            $places = $category->places()->where('published', true)->orderBy('name', 'ASC')->get();
-        } else {
-            $chosenCategory = 'all';
-            $places = Place::where('published', true)->orderBy('name', 'ASC')->get();
-        }
+		if (!empty($filters['price']))
+			$places = $places->where('average_price', $filters['price']);
+		if (!empty($filters['rating']))
+			$places = $places->where('rating', $filters['rating']);
 
-        $categories = Category::all();
+		// TODO: order
+		// $orderBy =
+		$places = $places->orderBy('name', 'ASC')->get();
 
-        $places = $places->where('published', true);
+		return view('list', ['places' => $places, 'categories' => $categories, 'filters' => $filters]);
+	}
 
-        if ($data['rating'])
-            $places = $places->where('rating', $data['rating']);
-        if ($data['price'])
-            $places = $places->where('average_price', $data['price']);
-
-        return view('list', ['places' => $places, 'filters' => $data, 'categories' => $categories, 'chosenCategory' => $chosenCategory]);
-    }
 }

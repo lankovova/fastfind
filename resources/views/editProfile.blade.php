@@ -24,7 +24,7 @@
 					</div>
 					<div class="email">
 						<div class="key">Email</div>
-						<input type="email" name="email" value="{{ $user->email }}">
+						<input type="email" name="email" value="{{ $user->email }}" readonly>
 					</div>
 					<div class="address">
 						<div class="key">Address</div>
