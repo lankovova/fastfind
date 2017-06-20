@@ -1141,6 +1141,7 @@ main {
 }
 
 .card .card-content .card-description {
+  line-height: 18px;
   padding-top: 5px;
   font-size: 14px;
 }

@@ -53,18 +53,22 @@
 							<div class="value">{{ $place->work_hours }}</div>
 						</div>
 					@endif
+					@if ($place->address)
 					<div class="address">
 						<div class="icon">
 							<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
 						</div>
 						<div class="value" id="place_address_for_map">{{ $place->address }}</div>
 					</div>
+					@endif
+					@if ($place->phone)
 					<div class="telephone">
 						<div class="icon">
 							<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
 						</div>
 						<div class="value">{{ $place->phone }}</div>
 					</div>
+					@endif
 					@if ($place->website)
 						<div class="website">
 							<div class="icon">

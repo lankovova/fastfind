@@ -14,9 +14,9 @@ class ListController extends Controller
         if ($request->input('c')) {
             $chosenCategory = $request->input('c', 'all');
             $category = Category::where('name', $chosenCategory)->first();
-            $places = $category->places->where('published', true);
+            $places = $category->places()->where('published', true)->orderBy('name', 'ASC')->get();
         } else {
-            $places = Place::all()->where('published', true);
+            $places = Place::where('published', true)->orderBy('name', 'ASC')->get();
         }
 
         $categories = Category::all();
@@ -33,10 +33,10 @@ class ListController extends Controller
         if ($data['category'] != 'all') {
             $chosenCategory = $data['category'];
             $category = Category::where('name', $chosenCategory)->first();
-            $places = $category->places;
+            $places = $category->places()->where('published', true)->orderBy('name', 'ASC')->get();
         } else {
             $chosenCategory = 'all';
-            $places = Place::all();
+            $places = Place::where('published', true)->orderBy('name', 'ASC')->get();
         }
 
         $categories = Category::all();

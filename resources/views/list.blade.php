@@ -97,7 +97,10 @@
 									</div>
 								</div>
 								<div class="card-description">
-									{{ $place->description }}
+									{{ substr($place->description,0,100) }}
+									@if (strlen($place->description) > 100)
+									...
+									@endif
 								</div>
 							</div>
 						</div>
