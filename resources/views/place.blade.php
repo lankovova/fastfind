@@ -12,7 +12,7 @@
 			<div class="text-wrapper">
 				<div class="text-container">
 					<div class="place-name">{{ $place->name }}
-					@if (Auth::user()->type == 'admin')
+					@if (Auth::check() && Auth::user()->type == 'admin')
 						<a href="/placeeditor/{{ $place->id }}" style="color: red; font-size: 20px"><i class="fa fa-cogs" aria-hidden="true"></i> Edit</a>
 					@endif
 					</div>
@@ -155,7 +155,7 @@
 									<div class="text">
 										{{ $review->text }}
 									</div>
-									@if (Auth::user()->type == 'admin')
+									@if (Auth::check() && Auth::user()->type == 'admin')
 										<form action="/api/deleteReview" method="post">
 											{{ csrf_field() }}
 											<input type="hidden" name="reviewId" value="{{$review->id}}">

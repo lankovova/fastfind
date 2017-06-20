@@ -2,7 +2,7 @@
 	var prevSearchText;
 
 	$(function(){
-		$('#header-search-form #header-search-field').keyup(function(e) {
+		$('#header-search-form #header-search-field').keyup(function() {
 			searchHandler($(this).val());
 		});
 
@@ -10,6 +10,26 @@
 			prevSearchText = undefined;
 			searchHandler($(this).val());
 		});
+
+		// Mobile
+		$('#mob-header-search-form #mob-header-search-field').keyup(function() {
+			searchHandler($(this).val());
+		});
+
+		$('#mob-header-search-form #mob-header-search-field').click(function() {
+			prevSearchText = undefined;
+			searchHandler($(this).val());
+		});
+
+		$('#mob-search-link').click(function() {
+			$('#mob-header-search-form').fadeIn();
+		});
+
+		$('#mob-close-layer').click(function() {
+			clearSearchResults();
+			$('#mob-header-search-form').fadeOut();
+		});
+
 
 		$(document).keyup(function(e) {
 			if (e.keyCode == 27) {
@@ -39,15 +59,21 @@
 	}
 
 	function outputSearchResults(placesData) {
-		var searchResults = $('#search-results');
+		var searchResults;
+		if (window.matchMedia("(min-width: 500px)").matches) {
+			/* the viewport is at least 500 pixels wide */
+			searchResults = $('#search-results');
+		} else {
+			/* the viewport is less than 500 pixels wide */
+			searchResults = $('#mob-search-results');
+		}
 
 		var resultsHtml = '';
 		if (placesData !== '') {
 			$.each( JSON.parse(placesData), function( key, value ) {
 				resultsHtml += '<div class="search-result"><a href="/place/' + value.id + '">' + value.name + '</div>';
 			});
-		}
-		else {
+		} else {
 			// Zero results case
 			resultsHtml += '<div class="search-result-zero">No such places</div>';
 		}
@@ -57,6 +83,10 @@
 	}
 
 	function clearSearchResults() {
-		$('#search-results').html('');
+		if (window.matchMedia("(min-width: 500px)").matches) {
+			$('#search-results').html('');
+		} else {
+			$('#mob-search-results').html('');
+		}
 	}
 })();

@@ -28,11 +28,10 @@
 			</div>
 			<div class="links flexbox">
 				<i class="fa fa-search" aria-hidden="true"></i>
-				<form id="header-search-form" action="">
-					{{ csrf_field() }}
+				<div id="header-search-form">
 					<input type="text" id="header-search-field" placeholder="Search" value="">
 					<div id="search-results"></div>
-				</form>
+				</div>
 				@if (Auth::guest())
 					<a href="{{ route('login') }}" class="link">Login</a>
 				@else
@@ -44,6 +43,12 @@
 				@endif
 			</div>
 			<div class="mobile-menu">
+				<i class="fa fa-search" id="mob-search-link" aria-hidden="true"></i>
+				<div id="mob-header-search-form">
+					<div id="mob-close-layer"></div>
+					<input type="text" id="mob-header-search-field" placeholder="Search" value="">
+					<div id="mob-search-results"></div>
+				</div>
 				<div class="burger flexbox flex-center">
 					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 				</div>
