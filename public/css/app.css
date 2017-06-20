@@ -1037,6 +1037,17 @@ main {
   padding: 10px;
 }
 
+#cards-preloader {
+  width: 100% !important;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
 .card-container {
   padding: 5px;
   box-sizing: border-box;

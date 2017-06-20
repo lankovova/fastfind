@@ -141,9 +141,13 @@
 						</div>
 					</div>
 				@endforeach
+				<div id="cards-preloader">
+					<img src="../images/preloader.gif" alt="">
+				</div>
 			@endif
 
 		</div>
+		<div id="cards-end-marker"></div>
 	</div>
 </div>
 
