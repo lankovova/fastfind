@@ -19,8 +19,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 // List route
 Route::get('/list', 'ListController@index')->name('list');
-// Route::post('/list', 'ListController@filter')->name('filterList');
-// Route::get('/listOrder', 'ListController@order')->name('orderList');
 
 // Review routes
 Route::post('/api/leaveReview', 'ReviewController@create')->name('leaveReview');

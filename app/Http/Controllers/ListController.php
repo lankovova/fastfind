@@ -41,11 +41,12 @@ class ListController extends Controller
 		if (!empty($filters['rating']))
 			$places = $places->where('rating', $filters['rating']);
 
-		// TODO: order
-		// $orderBy =
-		$places = $places->orderBy('name', 'ASC')->get();
+		$orderBy = isset($input['orderBy']) ? $input['orderBy'] : "name";
+		$orderFlow = isset($input['orderFlow']) ? $input['orderFlow'] : "desc";
 
-		return view('list', ['places' => $places, 'categories' => $categories, 'filters' => $filters]);
+		$places = $places->orderBy($orderBy, $orderFlow)->get();
+
+		return view('list', ['places' => $places, 'categories' => $categories, 'filters' => $filters, 'orderBy' => $orderBy, 'orderFlow' => $orderFlow]);
 	}
 
 }

@@ -46,20 +46,56 @@
 	</div>
 	<div class="cards-map-container">
 
+		<input type="hidden" id="orderBy" value="{{ $orderBy }}">
+		<input type="hidden" id="orderFlow" value="{{ $orderFlow }}">
+
 		<div class="order-container">
 			<div class="order">
 				<div class="heading">
 					Order by
 				</div>
-				<div class="orderby" id="order-by-name">
-					Name <i class="fa fa-chevron-down" aria-hidden="true"></i>
-				</div>
-				<div class="orderby" id="order-by-rating">
-					Rating <i class="fa fa-chevron-down" aria-hidden="true"></i>
-				</div>
-				<div class="orderby" id="order-by-price">
-					Price <i class="fa fa-chevron-down" aria-hidden="true"></i>
-				</div>
+				@if ($orderBy == 'name')
+					<div class="orderby" style="color: green" id="order-by-name">
+						Name
+						@if ($orderFlow == 'desc')
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						@elseif ($orderFlow == 'asc')
+							<i class="fa fa-chevron-up" aria-hidden="true"></i>
+						@endif
+					</div>
+				@else
+					<div class="orderby" id="order-by-name">
+						Name <i class="fa fa-chevron-down" aria-hidden="true"></i>
+					</div>
+				@endif
+				@if ($orderBy == 'rating')
+					<div class="orderby" style="color: green" id="order-by-rating">
+						Rating
+						@if ($orderFlow == 'desc')
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						@elseif ($orderFlow == 'asc')
+							<i class="fa fa-chevron-up" aria-hidden="true"></i>
+						@endif
+					</div>
+				@else
+					<div class="orderby" id="order-by-rating">
+						Rating <i class="fa fa-chevron-down" aria-hidden="true"></i>
+					</div>
+				@endif
+				@if ($orderBy == 'average_price')
+					<div class="orderby" style="color: green" id="order-by-price">
+						Price
+						@if ($orderFlow == 'desc')
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						@elseif ($orderFlow == 'asc')
+							<i class="fa fa-chevron-up" aria-hidden="true"></i>
+						@endif
+					</div>
+				@else
+					<div class="orderby" id="order-by-price">
+						Price <i class="fa fa-chevron-down" aria-hidden="true"></i>
+					</div>
+				@endif
 			</div>
 		</div>
 
