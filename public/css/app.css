@@ -1151,6 +1151,10 @@ main {
   color: #999999;
 }
 
+.card .card-content .card-top-plate .rating i {
+  color: #e6c200;
+}
+
 .card .card-content .card-description {
   line-height: 18px;
   padding-top: 5px;
