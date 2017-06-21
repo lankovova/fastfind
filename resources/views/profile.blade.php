@@ -21,8 +21,8 @@
 						<form action="/api/unbanUser" method="post" class="ban-user">
 							{{ csrf_field() }}
 							<input type="hidden" name="userId" value="{{ $user->id }}">
-							<i class="fa fa-ban" aria-hidden="true"></i>
-							<input type="submit" value="Unban">
+							<i class="fa fa-ban" style="color: green" aria-hidden="true"></i>
+							<input style="color: green" type="submit" value="Unban">
 						</form>
 					@else
 						<form action="/api/banUser" method="post" class="ban-user">

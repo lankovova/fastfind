@@ -133,44 +133,48 @@
 					<div class="heading">All Reviews ({{ count($placeReviews) }})</div>
 
 					@foreach ($placeReviews as $review)
-						@if ($review->user->type != 'banned')
-							<div class="review">
-								<div class="left-review-part">
-									<div class="image-container">
-										<img src="../images/users/{{ $review->user->photo }}" alt="user image">
-									</div>
-								</div>
-								<div class="right-review-part">
-									<div class="top-wrapper">
-										<div class="left-part">
-											<div class="name">
-												<a href="{{ route('userprofile', ['id' => $review->user->id]) }}">
-													{{ $review->user->name }}
-												</a>
-											</div>
-											<div class="rate">
-												{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
-											</div>
-										</div>
-										<div class="date">
-											{{ $review->date }}
-										</div>
-									</div>
-									<div class="text">
-										{{ $review->text }}
-									</div>
-									@if (Auth::check() && Auth::user()->type == 'admin')
-										<form action="/api/deleteReview" method="post">
-											{{ csrf_field() }}
-											<input type="hidden" name="placeId" value="{{$place->id}}">
-											<input type="hidden" name="reviewId" value="{{$review->id}}">
-											<i class="fa fa-trash-o" aria-hidden="true"></i>
-											<input type="submit" class="delete-btn" value="Delete review">
-										</form>
-									@endif
+						<div class="review">
+							<div class="left-review-part">
+								<div class="image-container">
+									<img src="../images/users/{{ $review->user->photo }}" alt="user image">
 								</div>
 							</div>
-						@endif
+							<div class="right-review-part">
+								<div class="top-wrapper">
+									<div class="left-part">
+										<div class="name">
+											<a href="{{ route('userprofile', ['id' => $review->user->id]) }}">
+												{{ $review->user->name }}
+											</a>
+											@if ($review->user->type == 'banned')
+												<span style="color: red">
+													<i class="fa fa-ban" aria-hidden="true"></i>
+													banned
+												</span>
+											@endif
+										</div>
+										<div class="rate">
+											{{ $review->rating }}/10 <i class="fa fa-star" aria-hidden="true"></i>
+										</div>
+									</div>
+									<div class="date">
+										{{ $review->date }}
+									</div>
+								</div>
+								<div class="text">
+									{{ $review->text }}
+								</div>
+								@if (Auth::check() && Auth::user()->type == 'admin')
+									<form action="/api/deleteReview" method="post">
+										{{ csrf_field() }}
+										<input type="hidden" name="placeId" value="{{$place->id}}">
+										<input type="hidden" name="reviewId" value="{{$review->id}}">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+										<input type="submit" class="delete-btn" value="Delete review">
+									</form>
+								@endif
+							</div>
+						</div>
 					@endforeach
 
 				</div>
