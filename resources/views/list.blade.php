@@ -6,7 +6,7 @@
 
 <div id="list-page" class="flexbox">
 	<div class="filters-block">
-		<div class="toggle-filters-btn"><i class="fa fa-chevron-down" aria-hidden="true"></i> Open filters</div>
+		<div class="toggle-filters-btn"><i class="fa fa-chevron-down" aria-hidden="true"></i> Filters</div>
 		<div class="filters-container">
 			<div class="filters-content flexbox">
 				<form id="filters-form" method="GET">

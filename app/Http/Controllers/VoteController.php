@@ -11,7 +11,7 @@ use Auth;
 class VoteController extends Controller
 {
 	public function index(Request $req) {
-		if (!Auth::check())
+		if (!Auth::check() || Auth::user()->type == 'banned')
 			abort(404);
 
 		$data = $req->all();
@@ -33,7 +33,7 @@ class VoteController extends Controller
 	}
 
 	public function vote(Request $req) {
-		if (!Auth::check())
+		if (!Auth::check() && Auth::user()->type == 'banned')
 			abort(404);
 
 		$data = $req->all();

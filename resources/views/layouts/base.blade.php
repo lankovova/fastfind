@@ -35,7 +35,9 @@
 				@if (Auth::guest())
 					<a href="{{ route('login') }}" class="link">Login</a>
 				@else
-					<a href="{{ route('votePage') }}" class="link">Vote</a>
+					@if (Auth::check() && Auth::user()->type != 'banned')
+						<a href="{{ route('votePage') }}" class="link">Vote</a>
+					@endif
 					<a href="{{ route('selfprofile') }}" class="link">{{ Auth::user()->name }}</a>
 					<a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -55,11 +57,14 @@
 				</div>
 				<div class="dropdown">
 					<div class="mob-links flexbox flex-col">
+						@if (Auth::check() && Auth::user()->type != 'banned')
+							<a href="{{ route('votePage') }}" class="mob-link">Vote</a>
+						@endif
 						@if (Auth::guest())
 							<a href="{{ route('login') }}" class="mob-link">Login</a>
 						@else
-							<a href="{{ route('selfprofile') }}" class="link">{{ Auth::user()->name }}</a>
-							<a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+							<a href="{{ route('selfprofile') }}" class="mob-link">{{ Auth::user()->name }}</a>
+							<a href="{{ route('logout') }}" class="mob-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 						@endif
 					</div>
 				</div>

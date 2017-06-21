@@ -565,6 +565,7 @@ body {
 }
 
 #header .mobile-menu .dropdown .mob-links .mob-link {
+  text-transform: uppercase;
   font-size: 18px;
   box-sizing: border-box;
   padding: 15px 30px;
@@ -1740,7 +1741,7 @@ main {
 
 #profile-page .profile-wrapper .right-layer .detailed-info .name {
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 #profile-page .profile-wrapper .right-layer .detailed-info .name .value {
@@ -1768,7 +1769,7 @@ main {
 }
 
 #profile-page .profile-wrapper .right-layer .reviews-wrapper {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #profile-page .profile-wrapper .right-layer .reviews-wrapper .heading {

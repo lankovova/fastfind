@@ -38,7 +38,7 @@
 							</div>
 							<div class="bottom-plate">
 								<div class="total-votes">
-									Votes: <b>{{ count($place->votes) }}</b>
+									Votes: <b>{{ count($place->votes) }}</b>/100
 								</div>
 
 								<?php $alreadyVoted = false ?>
