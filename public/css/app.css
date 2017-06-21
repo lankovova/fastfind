@@ -1905,7 +1905,6 @@ main {
 }
 
 #simple-list #category-form select {
-  margin-bottom: 5px;
   text-transform: capitalize;
   padding: 10px;
   border-radius: 20px;

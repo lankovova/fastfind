@@ -52,6 +52,6 @@ class VoteController extends Controller
 				->update(['invoting' => 0]);
 		}
 
-		return $totalVotes;
+		return redirect()->route('votePage');
 	}
 }

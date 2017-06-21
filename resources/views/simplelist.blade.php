@@ -41,21 +41,26 @@
 									Votes: <b>{{ count($place->votes) }}</b>
 								</div>
 
+								<?php $alreadyVoted = false ?>
 								@foreach ($place->votes as $vote)
-									@if ($vote->id == Auth::user()->id)
-										<div class="text">You already voted up</div>
-										<form action="" method="">
-											{{ csrf_field() }}
-											<input type="submit" class="voted" value="Vote Up" disabled>
-										</form>
-									@else
-										<form action="/api/voteForPlace" method="post">
-											{{ csrf_field() }}
-											<input type="hidden" name="placeId" value="{{ $place->id }}">
-											<input type="submit" class="notvoted" value="Vote Up">
-										</form>
+									@if ($vote->user_id == Auth::user()->id)
+										<?php $alreadyVoted = true ?>
 									@endif
 								@endforeach
+
+								@if ($alreadyVoted)
+									<div class="text">You already voted up</div>
+									<form action="" method="">
+											{{ csrf_field() }}
+											<input type="submit" class="voted" value="Vote Up" disabled>
+									</form>
+								@else
+									<form action="/api/voteForPlace" method="post">
+										{{ csrf_field() }}
+										<input type="hidden" name="placeId" value="{{ $place->id }}">
+										<input type="submit" class="notvoted" value="Vote Up">
+									</form>
+								@endif
 
 							</div>
 						</div>
