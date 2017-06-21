@@ -347,7 +347,7 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   #header .links {
     display: none;
   }
@@ -451,7 +451,7 @@ body {
   justify-content: flex-end;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   #header .mobile-menu {
     display: -webkit-box;
     display: flex;
