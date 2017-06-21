@@ -935,10 +935,13 @@ main {
 #list-page .filters-block .filters-container .filters-content .filters .label {
   margin-top: 10px;
   width: 100%;
-  color: #4d4d4d;
+  color: black;
 }
 
 #list-page .filters-block .filters-container .filters-content .filters .filter-inputs {
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
   padding: 5px 10px;
@@ -946,6 +949,7 @@ main {
 }
 
 #list-page .filters-block .filters-container .filters-content #apply-btn {
+  border-radius: 5px;
   border: none;
   text-align: center;
   text-transform: uppercase;
