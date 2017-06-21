@@ -6,45 +6,46 @@
 
 	var reqInProgress = false;
 
-	console.log($('#cards-end-marker').offset().top - $(window).height());
-	// Scroll event on places list page
-	$('.cards-map-container').scroll(function(e) {
-		if (therIsMorePlaces && !reqInProgress) {
-			if ($('#cards-end-marker').offset().top - $(window).height() === 0) {
-				reqInProgress = true;
-				$('#cards-preloader').css({display: 'flex'});
+	if ($('.cards-map-container').length !== 0) {
+		// Scroll event on places list page
+		$('.cards-map-container').scroll(function(e) {
+			if (therIsMorePlaces && !reqInProgress) {
+				if ($('#cards-end-marker').offset().top - $(window).height() === 0) {
+					reqInProgress = true;
+					$('#cards-preloader').css({display: 'flex'});
 
-				var filtersData = $('#filters-form').serialize();
-				var orderBy = $('#orderBy').val();
-				var orderFlow = $('#orderFlow').val();
+					var filtersData = $('#filters-form').serialize();
+					var orderBy = $('#orderBy').val();
+					var orderFlow = $('#orderFlow').val();
 
-				$.get("/api/getPlaces?" + filtersData, { page: pageNumber, orderBy: orderBy, orderFlow: orderFlow })
-					.done(function(places) {
-						setTimeout(function() {
-							var i = 0;
-							places.forEach(function(place) {
-								// Insert retrived data to places template
-								var placeHTML = renderPlace(place);
+					$.get("/api/getPlaces?" + filtersData, { page: pageNumber, orderBy: orderBy, orderFlow: orderFlow })
+						.done(function(places) {
+							setTimeout(function() {
+								var i = 0;
+								places.forEach(function(place) {
+									// Insert retrived data to places template
+									var placeHTML = renderPlace(place);
 
-								// Remove preloader
-								$('#cards-preloader').css({display: 'none'});
+									// Remove preloader
+									$('#cards-preloader').css({display: 'none'});
 
-								// Insert rendered places
-								$(placeHTML).appendTo($('.cards'));
+									// Insert rendered places
+									$(placeHTML).appendTo($('.cards'));
 
-								i++;
-							});
+									i++;
+								});
 
-							if (i < 16) therIsMorePlaces = false;
+								if (i < 16) therIsMorePlaces = false;
 
-							// Request is done
-							reqInProgress = false;
-							pageNumber++;
-						}, 1000);
-					});
+								// Request is done
+								reqInProgress = false;
+								pageNumber++;
+							}, 1000);
+						});
+				}
 			}
-		}
-	});
+		});
+	}
 
 	function renderPlace(place) {
 		let priceHTML = '';

@@ -24,6 +24,8 @@ class PlaceController extends Controller
     }
 
     public function showEditor() {
+        if (Auth::user()->type == 'banned')
+            abort(404);
         if (!Auth::check())
             return redirect()->route('login');
 
@@ -54,6 +56,8 @@ class PlaceController extends Controller
 
         $input = $request->all();
 
+        $published = (!empty($input['published']) && $input['published'] == 'on') ? 1 : 0;
+
         $categoryId;
         foreach ($categories as $cat) {
             if ($cat->name == $input['category'])
@@ -71,6 +75,7 @@ class PlaceController extends Controller
                         'address' => $input['address'],
                         'website' => $input['website'],
                         'description' => $input['description'],
+                        'published' => $published,
                         'category_id' => $categoryId
                         ]);
         } else {
@@ -84,6 +89,7 @@ class PlaceController extends Controller
                         'address' => $input['address'],
                         'website' => $input['website'],
                         'description' => $input['description'],
+                        'published' => $published,
                         'image' => basename($_FILES["fileToUpload"]["name"]),
                         'category_id' => $categoryId
                         ]);
@@ -95,12 +101,14 @@ class PlaceController extends Controller
     }
 
     public function createPlace(Request $request) {
-        if (!Auth::check())
+        if (!Auth::check() || Auth::user()->type == 'banned')
             abort(404);
 
         $categories = Category::all();
 
         $input = $request->all();
+
+        $published = (!empty($input['published']) && $input['published'] == 'on') ? 1 : 0;
 
         $selectedCategory = Category::where('name', $input["category"])->first();
 
@@ -116,7 +124,8 @@ class PlaceController extends Controller
             $place->work_hours = $input["workHours"];
             $place->image = basename( $_FILES["fileToUpload"]["name"]);
             $place->website = $input["website"];
-            $place->published = (Auth::user()->type == "admin") ? 1 : 0;
+            $place->published = $published;
+            $place->invoting = (Auth::user()->type == "admin") ? 0 : 1;
 
             $place->save();
 
@@ -132,6 +141,14 @@ class PlaceController extends Controller
         return view('placeeditor', ['categories' => $categories, 'response' => $response]);
     }
 
+    public function delete(Request $req) {
+        $placeId = $req->all()['placeId'];
+
+        DB::table('places')->where('id', $placeId)->delete();
+
+        return redirect()->route('list');
+    }
+
     private function uploadPlaceImage() {
         $target_dir = "images/places/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -141,10 +158,8 @@ class PlaceController extends Controller
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-                // echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                // echo "File is not an image.";
                 $uploadOk = 0;
             }
         }

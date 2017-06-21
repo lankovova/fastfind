@@ -22,6 +22,13 @@
 				@endif
 			</div>
 			@if (isset($place))
+				@if (Auth::user()->type == 'admin')
+					<form id="delete-place-form" action="/api/deletePlace" method="post">
+						{{ csrf_field() }}
+						<input type="hidden" name="placeId" value="{{ $place->id }}">
+						<input type="submit" value="Delete place">
+					</form>
+				@endif
 				<a href="/place/{{ $place->id }}">Back to place</a>
 			@endif
 		</div>
@@ -56,6 +63,9 @@
 				<div class="label">Work Hours</div><input type="text" placeholder="Work Hours" name="workHours" value="{{ (isset($place)) ? $place->work_hours : '' }}">
 				<div class="label">Average Price</div><input type="number" placeholder="Average Price" min='1' max='5' name="averagePrice" value="{{ (isset($place)) ? $place->average_price : '' }}">
 				<div class="label">Website</div><input type="text" placeholder="Website" name="website" value="{{ (isset($place)) ? $place->website : '' }}">
+				@if (Auth::user()->type == 'admin')
+					<div class="label">Published</div><input type="checkbox" name="published" {{ (isset($place) && $place->published) ? 'checked' : '' }}>
+				@endif
 				<input type="submit" value="Submit">
 			</form>
 		</div>
