@@ -3,7 +3,6 @@
 @section('title', 'FF - Place')
 
 @section('main')
-	{{-- Welcome {{ Auth::user() }} --}}
 
 <div id="profile-page">
 	<div class="profile-wrapper">

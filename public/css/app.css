@@ -1873,3 +1873,190 @@ main {
     padding: 10px 0;
   }
 }
+
+#simple-list {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#simple-list .main-heading {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+#simple-list #category-form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#simple-list #category-form .heading {
+  font-size: 18px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+#simple-list #category-form select {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 10px;
+}
+
+#simple-list #category-form input[type="submit"] {
+  outline: none;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #6a1b9a;
+  background: #FFBA19;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+#simple-list #category-form input[type="submit"]:hover {
+  color: white;
+  background: #32064D;
+}
+
+#simple-list .places-list .places-list-item {
+  border-radius: 5px;
+  background: white;
+  border: 1px solid lightgray;
+  display: -webkit-box;
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  #simple-list .places-list .places-list-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+  }
+}
+
+#simple-list .places-list .places-list-item .image-part {
+  min-width: 180px;
+  width: 30%;
+}
+
+@media screen and (max-width: 400px) {
+  #simple-list .places-list .places-list-item .image-part {
+    width: 100%;
+  }
+}
+
+#simple-list .places-list .places-list-item .image-part img {
+  border-radius: 5px 0 0 5px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  #simple-list .places-list .places-list-item .image-part img {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+#simple-list .places-list .places-list-item .text-part {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#simple-list .places-list .places-list-item .text-part .name {
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#simple-list .places-list .places-list-item .text-part .name a {
+  color: black;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+#simple-list .places-list .places-list-item .text-part .name a:hover {
+  color: #e5a000;
+}
+
+#simple-list .places-list .places-list-item .text-part .description {
+  margin-bottom: 5px;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate {
+  align-self: flex-end;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate .text {
+  margin-right: 5px;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate .total-votes {
+  margin-right: 20px;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate form {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate form .notvoted {
+  outline: none;
+  padding: 0;
+  color: #00B26D;
+  border: 1px solid #00CC7D;
+  border-radius: 20px;
+  background: transparent;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate form .notvoted:hover {
+  color: white;
+  background: #00CC7D;
+}
+
+#simple-list .places-list .places-list-item .text-part .bottom-plate form .voted {
+  outline: none;
+  padding: 0;
+  border: 1px solid #00CC7D;
+  border-radius: 20px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  color: white;
+  background: #00CC7D;
+}

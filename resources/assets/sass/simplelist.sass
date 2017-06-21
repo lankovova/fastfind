@@ -1,0 +1,114 @@
+@import "variables"
+
+#simple-list
+	max-width: 1000px
+	padding: 20px
+	margin: 0 auto
+	box-sizing: border-box
+	.main-heading
+		font-size: 24px
+		font-weight: 900
+		margin-bottom: 20px
+	#category-form
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		margin-bottom: 20px
+		.heading
+			font-size: 18px
+			margin-right: 10px
+			margin-bottom: 5px
+		select
+			margin-bottom: 5px
+			text-transform: capitalize
+			padding: 10px
+			border-radius: 20px
+			outline: none
+			margin-right: 10px
+		input[type="submit"]
+			outline: none
+			color: black
+			padding: 10px 20px
+			cursor: pointer
+			border-radius: 20px
+			border: 1px solid $primary-color
+			background: $accent-color
+			transition: all 300ms ease
+			&:hover
+				color: white
+				background: $primary-dark-color
+	.places-list
+		.places-list-item
+			border-radius: 5px
+			background: white
+			border: 1px solid lightgray
+			display: flex
+			@media screen and(max-width: 400px)
+				flex-flow: column
+			.image-part
+				min-width: 180px
+				width: 30%
+				@media screen and(max-width: 400px)
+					width: 100%
+				img
+					border-radius: 5px 0 0 5px
+					object-fit: cover
+					width: 100%
+					height: 100%
+					@media screen and(max-width: 400px)
+						border-radius: 5px 5px 0 0
+			.text-part
+				width: 100%
+				display: flex
+				flex-flow: column
+				justify-content: center
+				padding: 10px
+				box-sizing: border-box
+				.name
+					font-weight: 900
+					font-size: 18px
+					margin-bottom: 5px
+					a
+						color: black
+						transition: all 100ms ease
+						&:hover
+							color: darken($accent-color, 10)
+				.description
+					margin-bottom: 5px
+				.bottom-plate
+					align-self: flex-end
+					display: flex
+					align-items: center
+					flex-wrap: wrap
+					.text
+						margin-right: 5px
+					.total-votes
+						margin-right: 20px
+					form
+						display: flex
+						flex-wrap: wrap
+						align-items: center
+						justify-content: center
+						.notvoted
+							outline: none
+							padding: 0
+							color: $second-dark-color
+							border: 1px solid $second-color
+							border-radius: 20px
+							background: transparent
+							padding: 5px 10px
+							box-sizing: border-box
+							cursor: pointer
+							transition: all 200ms ease
+							&:hover
+								color: white
+								background: $second-color
+						.voted
+							outline: none
+							padding: 0
+							border: 1px solid $second-color
+							border-radius: 20px
+							padding: 5px 10px
+							box-sizing: border-box
+							color: white
+							background: $second-color

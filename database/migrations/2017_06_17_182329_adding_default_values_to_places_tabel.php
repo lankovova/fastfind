@@ -14,17 +14,17 @@ class AddingDefaultValuesToPlacesTabel extends Migration
     public function up()
     {
         //
-        Schema::table('places', function (Blueprint $table) {
-            $table->integer('rating')->default(5)->change();
-            $table->integer('average_price')->default(3)->change();
-            $table->text('description')->nullable()->default('No description')->change();
-            $table->string('phone')->nullable()->change();
-            $table->string('address')->change();
-            $table->string('work_hours')->nullable()->change();
-            $table->string('image')->default('default.jpg')->change();
-            $table->string('website')->nullable()->change();
-            $table->boolean('published')->default('0')->change();
-        });
+        // Schema::table('places', function (Blueprint $table) {
+        //     $table->integer('rating')->default(5)->change();
+        //     $table->integer('average_price')->default(3)->change();
+        //     $table->text('description')->nullable()->default('No description')->change();
+        //     $table->string('phone')->nullable()->change();
+        //     $table->string('address')->change();
+        //     $table->string('work_hours')->nullable()->change();
+        //     $table->string('image')->default('default.jpg')->change();
+        //     $table->string('website')->nullable()->change();
+        //     $table->boolean('published')->default('0')->change();
+        // });
     }
 
     /**
@@ -35,6 +35,6 @@ class AddingDefaultValuesToPlacesTabel extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('places');
+        // Schema::dropIfExists('places');
     }
 }

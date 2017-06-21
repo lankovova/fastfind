@@ -10,7 +10,8 @@ Route::get('/list', 'ListController@index')->name('list');
 Route::get('/api/getPlaces', 'ListController@getPlaces')->name('getPlaces');
 
 // Vote for places routes
-Route::get('/vote', 'VoteController@index')->name('vote');
+Route::get('/vote', 'VoteController@index')->name('votePage');
+Route::post('/api/voteForPlace', 'VoteController@vote')->name('vote');
 
 // Review routes
 Route::post('/api/leaveReview', 'ReviewController@create')->name('leaveReview');

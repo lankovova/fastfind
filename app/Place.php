@@ -20,4 +20,9 @@ class Place extends Model
     {
         return $this->hasMany('App\Review');
     }
+
+    public function votes()
+    {
+        return $this->hasMany('App\Vote');
+    }
 }
