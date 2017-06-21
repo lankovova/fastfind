@@ -26,13 +26,17 @@ class ReviewController extends Controller
 
         $newReview->save();
 
-        // Update place rating
-        $oldPlaceRating = DB::table('places')->select('rating')->where('id', $placeid)->first()->rating;
-        $newPlaceRating = round(($oldPlaceRating + $rating)/2);
+        // Count new rating
+        $allReviews = Place::where('id', $placeid)->first()->reviews;
+        $newRating = 0;
+        foreach ($allReviews as $rev) {
+            $newRating += $rev->rating;
+        }
+        $newRating = round($newRating / count($allReviews));
 
         DB::table('places')
             ->where('id', $placeid)
-            ->update(['rating' => $newPlaceRating]);
+            ->update(['rating' => $newRating]);
 
         return redirect()->route('place', ['id' => $placeid]);
     }
@@ -42,10 +46,11 @@ class ReviewController extends Controller
         $rid = $input['reviewId'];
         $placeId = $input['placeId'];
 
+        // Delete review
         DB::table('reviews')->where('id', $rid)->delete();
 
+        // Count new rating
         $allReviews = Place::where('id', $placeId)->first()->reviews;
-
         $newRating = 0;
         foreach ($allReviews as $rev) {
             $newRating += $rev->rating;
