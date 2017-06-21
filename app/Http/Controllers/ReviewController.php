@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Place;
 use DB;
 
 class ReviewController extends Controller
@@ -25,14 +26,35 @@ class ReviewController extends Controller
 
         $newReview->save();
 
+        // Update place rating
+        $oldPlaceRating = DB::table('places')->select('rating')->where('id', $placeid)->first()->rating;
+        $newPlaceRating = round(($oldPlaceRating + $rating)/2);
+
+        DB::table('places')
+            ->where('id', $placeid)
+            ->update(['rating' => $newPlaceRating]);
+
         return redirect()->route('place', ['id' => $placeid]);
     }
 
     public function delete(Request $request) {
         $input = $request->all();
         $rid = $input['reviewId'];
+        $placeId = $input['placeId'];
 
-        DB::table('reviews')->where('id', '=', $rid)->delete();
+        DB::table('reviews')->where('id', $rid)->delete();
+
+        $allReviews = Place::where('id', $placeId)->first()->reviews;
+
+        $newRating = 0;
+        foreach ($allReviews as $rev) {
+            $newRating += $rev->rating;
+        }
+        $newRating = round($newRating / count($allReviews));
+
+        DB::table('places')
+            ->where('id', $placeId)
+            ->update(['rating' => $newRating]);
 
         return redirect()->back();
     }

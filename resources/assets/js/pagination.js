@@ -6,6 +6,7 @@
 
 	var reqInProgress = false;
 
+	console.log($('#cards-end-marker').offset().top - $(window).height());
 	// Scroll event on places list page
 	$('.cards-map-container').scroll(function(e) {
 		if (therIsMorePlaces && !reqInProgress) {
@@ -34,7 +35,7 @@
 								i++;
 							});
 
-							if (i < 12) therIsMorePlaces = false;
+							if (i < 16) therIsMorePlaces = false;
 
 							// Request is done
 							reqInProgress = false;
