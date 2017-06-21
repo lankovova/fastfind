@@ -22,6 +22,11 @@
 						$icons = ['cutlery', 'coffee', 'ticket', 'university']
 					@endphp
 
+						<div class="type-container">
+							<a href="{{ route('list', ['category' => 'all']) }}">
+								<div class="type"><i class="fa fa-globe" aria-hidden="true"></i> All</div>
+							</a>
+						</div>
 					@foreach ($categories as $category)
 						<div class="type-container">
 							<a href="{{ route('list', ['category' => $category->name]) }}">

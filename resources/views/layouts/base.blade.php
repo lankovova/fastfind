@@ -36,7 +36,10 @@
 					<a href="{{ route('login') }}" class="link">Login</a>
 				@else
 					@if (Auth::check() && Auth::user()->type != 'banned')
-						<a href="{{ route('createPlace') }}" class="link">Add Place</a>
+						@if (Auth::user()->type == 'admin')
+							<a href="{{ route('allPlacesPage') }}" class="link">All PLaces</a>
+						@endif
+						<a href="{{ route('createPlace') }}" class="link">Add</a>
 						<a href="{{ route('votePage') }}" class="link">Vote</a>
 					@endif
 					<a href="{{ route('selfprofile') }}" class="link">{{ Auth::user()->name }}</a>
@@ -59,7 +62,10 @@
 				<div class="dropdown">
 					<div class="mob-links flexbox flex-col">
 						@if (Auth::check() && Auth::user()->type != 'banned')
-							<a href="{{ route('createPlace') }}" class="mob-link">Add Place</a>
+							@if (Auth::user()->type == 'admin')
+								<a href="{{ route('allPlacesPage') }}" class="mob-link">All PLaces</a>
+							@endif
+							<a href="{{ route('createPlace') }}" class="mob-link">Add</a>
 							<a href="{{ route('votePage') }}" class="mob-link">Vote</a>
 						@endif
 						@if (Auth::guest())

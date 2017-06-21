@@ -28,6 +28,7 @@ Route::get('/placeeditor/{id}', 'PlaceController@showEditorForPlace')->name('pla
 Route::post('/placeeditor/{id}', 'PlaceController@editPlace')->name('editPlace');
 Route::post('/api/deletePlace', 'PlaceController@delete')->name('deletePlace');
 
+Route::get('/allplaces', 'PlaceController@allPlaces')->name('allPlacesPage');
 // User profile routes
 Route::get('/profile', 'UserController@showSelf')->name('selfprofile');
 Route::get('/profile/edit', 'UserController@showEdit')->name('showEditPage');

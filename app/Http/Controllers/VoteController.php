@@ -29,7 +29,7 @@ class VoteController extends Controller
 			$greenlightPlaces = Place::where('invoting', true)->get();
 		}
 
-		return view('simplelist', ['places' => $greenlightPlaces, 'categories' => $categories, 'chosenCat' => $categoryId]);
+		return view('votelist', ['places' => $greenlightPlaces, 'categories' => $categories, 'chosenCat' => $categoryId]);
 	}
 
 	public function vote(Request $req) {
