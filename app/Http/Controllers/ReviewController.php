@@ -55,7 +55,7 @@ class ReviewController extends Controller
         foreach ($allReviews as $rev) {
             $newRating += $rev->rating;
         }
-        if (count($allReviews == 0)) {
+        if (count($allReviews) == 0) {
             DB::table('places')
                 ->where('id', $placeId)
                 ->update(['rating' => 5]);
