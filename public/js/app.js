@@ -162,7 +162,7 @@ $(function(){
 								i++;
 							});
 
-							if (i < 16) therIsMorePlaces = false;
+							if (i < 12) therIsMorePlaces = false;
 
 							// Remove preloader
 							$('#cards-preloader').css({ display: 'none' });

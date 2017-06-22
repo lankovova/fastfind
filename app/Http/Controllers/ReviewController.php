@@ -55,11 +55,17 @@ class ReviewController extends Controller
         foreach ($allReviews as $rev) {
             $newRating += $rev->rating;
         }
-        $newRating = round($newRating / count($allReviews));
+        if (count($allReviews == 0)) {
+            DB::table('places')
+                ->where('id', $placeId)
+                ->update(['rating' => 5]);
+        } else {
+            $newRating = round($newRating / count($allReviews));
 
-        DB::table('places')
-            ->where('id', $placeId)
-            ->update(['rating' => $newRating]);
+            DB::table('places')
+                ->where('id', $placeId)
+                ->update(['rating' => $newRating]);
+        }
 
         return redirect()->back();
     }

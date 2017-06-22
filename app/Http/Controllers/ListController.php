@@ -44,7 +44,7 @@ class ListController extends Controller
 		$orderBy = isset($input['orderBy']) ? $input['orderBy'] : "name";
 		$orderFlow = isset($input['orderFlow']) ? $input['orderFlow'] : "desc";
 
-		$places = $places->take(16);
+		$places = $places->take(12);
 		$places = $places->orderBy($orderBy, $orderFlow)->get();
 
 		return view('list', ['places' => $places, 'categories' => $categories, 'filters' => $filters, 'orderBy' => $orderBy, 'orderFlow' => $orderFlow]);
@@ -85,7 +85,7 @@ class ListController extends Controller
 		$orderBy = isset($input['orderBy']) ? $input['orderBy'] : "name";
 		$orderFlow = isset($input['orderFlow']) ? $input['orderFlow'] : "desc";
 
-		$placesOnPage = 16;
+		$placesOnPage = 12;
 
 		$places = $places->skip($placesOnPage * $input['page'])->take($placesOnPage);
 		$places = $places->orderBy($orderBy, $orderFlow)->get();
